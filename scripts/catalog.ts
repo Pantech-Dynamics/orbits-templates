@@ -3,6 +3,7 @@
 //   bun run catalog --check  fail if a manifest is invalid or catalog.json is out of date (CI)
 
 import { readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { z } from "zod";
 import { Manifest } from "./manifest";
@@ -15,6 +16,20 @@ const CATEGORY_ORDER = ["commerce", "content", "apps", "apis"];
 const KEY = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const exists = (path: string) => stat(path).then(() => true, () => false);
+
+/** The files git would commit in a template (tracked or new, never ignored), with their modes. Orbit copies exactly these. */
+async function filesOf(where: string) {
+  const out = spawnSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "-z", where], { cwd: ROOT, encoding: "utf8" });
+  if (out.status !== 0) throw new Error(`git ls-files failed: ${out.stderr}`);
+  const paths = out.stdout.split("\0").filter(Boolean).sort();
+  const files = [];
+  for (const path of paths) {
+    const info = await stat(join(ROOT, path)).catch(() => null);
+    if (!info?.isFile()) continue;
+    files.push({ path: path.slice(where.length + 1), mode: info.mode & 0o111 ? "100755" : "100644", size: info.size });
+  }
+  return files;
+}
 
 const problems: string[] = [];
 const items = [];
@@ -50,8 +65,13 @@ for (const key of (await readdir(TEMPLATES)).sort()) {
     if (Object.keys(deps).length && !hasLock) problems.push(`${where}: commit a lock file so every deploy installs the same versions`);
   }
 
+  const files = await filesOf(where);
+  // A workflow file would need the GitHub App's Workflows permission to write; templates don't carry CI.
+  if (files.some((f) => f.path.startsWith(".github/workflows/"))) problems.push(`${where}: remove .github/workflows; Orbit can't write workflow files`);
+  if (files.some((f) => f.size > 700_000)) problems.push(`${where}: keep every file under 700 KB`);
+
   const { $schema: _, ...rest } = manifest;
-  items.push({ key, path: where, ...rest });
+  items.push({ key, path: where, ...rest, files: files.map(({ path, mode }) => ({ path, mode })) });
 }
 
 items.sort(

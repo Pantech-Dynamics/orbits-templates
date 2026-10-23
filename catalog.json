@@ -16,7 +16,109 @@
         }
       ],
       "optional_env": [],
-      "order": 10
+      "order": 10,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "AGENTS.md",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "app/_components/add-to-cart.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/_components/cart-link.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/_components/tile.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/actions.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "app/cart/cart.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/cart/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/checkout/complete/clear-cart.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/checkout/complete/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/globals.css",
+          "mode": "100644"
+        },
+        {
+          "path": "app/layout.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/not-found.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/products/[slug]/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "eslint.config.mjs",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/cart.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/paystack.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/products.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "next.config.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "events-page",
@@ -33,7 +135,93 @@
           "hint": "Each free RSVP is POSTed here: Slack, Zapier, your own API."
         }
       ],
-      "order": 20
+      "order": 20,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".npmrc",
+          "mode": "100644"
+        },
+        {
+          "path": ".vscode/extensions.json",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.d.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.html",
+          "mode": "100644"
+        },
+        {
+          "path": "src/env.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/assets/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/event.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/server/rsvps.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+layout.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+page.server.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+page.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/calendar.ics/+server.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "static/robots.txt",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        },
+        {
+          "path": "vite.config.ts",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "marketing-site",
@@ -50,7 +238,121 @@
         "output_directory": "dist"
       },
       "node_version": "24.x",
-      "order": 10
+      "order": 10,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".vscode/extensions.json",
+          "mode": "100644"
+        },
+        {
+          "path": ".vscode/launch.json",
+          "mode": "100644"
+        },
+        {
+          "path": "AGENTS.md",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "astro.config.mjs",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.ico",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/Feature.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/Footer.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/Header.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content.config.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/blog/chasing-payments.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/blog/first-hundred-customers.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/blog/introducing-whatsapp-reminders.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/layouts/Base.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/404.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/blog/[...id].astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/blog/index.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/pricing.astro",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/rss.xml.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/site.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/styles/global.css",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "docs-site",
@@ -67,7 +369,113 @@
         "output_directory": "dist"
       },
       "node_version": "24.x",
-      "order": 20
+      "order": 20,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".vscode/extensions.json",
+          "mode": "100644"
+        },
+        {
+          "path": "AGENTS.md",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "astro.config.mjs",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content.config.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/getting-started.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/guides/configuration.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/guides/webhooks.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/index.mdx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/reference/client.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/1.0/reference/errors.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/getting-started.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/guides/configuration.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/guides/migrating.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/guides/pagination.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/guides/webhooks.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/index.mdx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/reference/client.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/docs/reference/errors.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/content/versions/1.0.json",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "blog",
@@ -79,7 +487,129 @@
       "framework_label": "SvelteKit",
       "required_env": [],
       "optional_env": [],
-      "order": 30
+      "order": 30,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".npmrc",
+          "mode": "100644"
+        },
+        {
+          "path": ".vscode/extensions.json",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.d.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.html",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/assets/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/posts.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/lib/site.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/posts/hello-world.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/posts/small-tools.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/posts/writing-every-week.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+layout.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+layout.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+page.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/+page.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/about/+page.md",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/post-list.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/posts/[slug]/+page.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/posts/[slug]/+page.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/rss.xml/+server.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/tags/[tag]/+page.svelte",
+          "mode": "100644"
+        },
+        {
+          "path": "src/routes/tags/[tag]/+page.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "static/robots.txt",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        },
+        {
+          "path": "vite.config.ts",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "portfolio",
@@ -96,7 +626,85 @@
           "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API."
         }
       ],
-      "order": 40
+      "order": 40,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "AGENTS.md",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "app/_components/contact-form.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/_components/cover.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/actions.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "app/globals.css",
+          "mode": "100644"
+        },
+        {
+          "path": "app/layout.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/not-found.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "app/work/[slug]/page.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "eslint.config.mjs",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/site.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/work.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "next.config.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "web-app",
@@ -113,7 +721,97 @@
         "output_directory": "dist",
         "spa_fallback": true
       },
-      "order": 10
+      "order": 10,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".oxlintrc.json",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/App.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/index.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/link.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/main.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/notes.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/About.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/NotFound.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/NoteList.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/NotePage.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/router.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.app.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.node.json",
+          "mode": "100644"
+        },
+        {
+          "path": "vite.config.ts",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "admin-dashboard",
@@ -130,7 +828,113 @@
         "output_directory": "dist",
         "spa_fallback": true
       },
-      "order": 15
+      "order": 15,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": ".oxlintrc.json",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/App.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/auth.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/badge.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/charts.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/table.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/data.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/index.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/link.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/main.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/Customers.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/Login.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/Orders.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/pages/Overview.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/router.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.app.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.node.json",
+          "mode": "100644"
+        },
+        {
+          "path": "vite.config.ts",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "elysia-htmx",
@@ -147,7 +951,65 @@
         "port": 3000,
         "health_check_path": "/health"
       },
-      "order": 20
+      "order": 20,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "bun.lock",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/styles.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/layout.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/components/tasks.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/index.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/tasks.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "test/app.test.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "static-site",
@@ -159,7 +1021,45 @@
       "framework_label": "HTML",
       "required_env": [],
       "optional_env": [],
-      "order": 30
+      "order": 30,
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "404.html",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "about.html",
+          "mode": "100644"
+        },
+        {
+          "path": "favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "main.js",
+          "mode": "100644"
+        },
+        {
+          "path": "styles.css",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "elysia-api",
@@ -185,7 +1085,65 @@
         "port": 3000,
         "health_check_path": "/health"
       },
-      "order": 5
+      "order": 5,
+      "files": [
+        {
+          "path": ".env.example",
+          "mode": "100644"
+        },
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "bun.lock",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "src/app.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/index.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/modules/health/index.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/modules/notes/index.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/modules/notes/model.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/modules/notes/store.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        },
+        {
+          "path": "test/notes.test.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "tsconfig.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "api",
@@ -207,7 +1165,53 @@
         "port": 3000,
         "health_check_path": "/"
       },
-      "order": 10
+      "order": 10,
+      "files": [
+        {
+          "path": ".env.example",
+          "mode": "100644"
+        },
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "package-lock.json",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "src/db.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/errors.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/items.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/router.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/server.js",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "webhook-receiver",
@@ -229,7 +1233,45 @@
         "port": 3000,
         "health_check_path": "/"
       },
-      "order": 30
+      "order": 30,
+      "files": [
+        {
+          "path": ".env.example",
+          "mode": "100644"
+        },
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "scripts/send.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/server.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/signature.js",
+          "mode": "100644"
+        },
+        {
+          "path": "src/store.js",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        }
+      ]
     },
     {
       "key": "waitlist",
@@ -255,7 +1297,41 @@
         "port": 3000,
         "health_check_path": "/"
       },
-      "order": 40
+      "order": 40,
+      "files": [
+        {
+          "path": ".env.example",
+          "mode": "100644"
+        },
+        {
+          "path": ".gitignore",
+          "mode": "100644"
+        },
+        {
+          "path": "README.md",
+          "mode": "100644"
+        },
+        {
+          "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "public/styles.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/server.js",
+          "mode": "100644"
+        },
+        {
+          "path": "template.json",
+          "mode": "100644"
+        }
+      ]
     }
   ]
 }
