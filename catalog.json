@@ -111,10 +111,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "tsconfig.json",
           "mode": "100644"
         }
@@ -207,10 +203,6 @@
         },
         {
           "path": "static/robots.txt",
-          "mode": "100644"
-        },
-        {
-          "path": "template.json",
           "mode": "100644"
         },
         {
@@ -345,10 +337,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "tsconfig.json",
           "mode": "100644"
         }
@@ -465,10 +453,6 @@
         },
         {
           "path": "src/content/versions/1.0.json",
-          "mode": "100644"
-        },
-        {
-          "path": "template.json",
           "mode": "100644"
         },
         {
@@ -598,10 +582,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "tsconfig.json",
           "mode": "100644"
         },
@@ -697,10 +677,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "tsconfig.json",
           "mode": "100644"
         }
@@ -789,10 +765,6 @@
         },
         {
           "path": "src/router.tsx",
-          "mode": "100644"
-        },
-        {
-          "path": "template.json",
           "mode": "100644"
         },
         {
@@ -915,10 +887,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "tsconfig.app.json",
           "mode": "100644"
         },
@@ -998,10 +966,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "test/app.test.ts",
           "mode": "100644"
         },
@@ -1053,10 +1017,6 @@
         },
         {
           "path": "styles.css",
-          "mode": "100644"
-        },
-        {
-          "path": "template.json",
           "mode": "100644"
         }
       ]
@@ -1132,10 +1092,6 @@
           "mode": "100644"
         },
         {
-          "path": "template.json",
-          "mode": "100644"
-        },
-        {
           "path": "test/notes.test.ts",
           "mode": "100644"
         },
@@ -1206,10 +1162,6 @@
         {
           "path": "src/server.js",
           "mode": "100644"
-        },
-        {
-          "path": "template.json",
-          "mode": "100644"
         }
       ]
     },
@@ -1266,10 +1218,6 @@
         {
           "path": "src/store.js",
           "mode": "100644"
-        },
-        {
-          "path": "template.json",
-          "mode": "100644"
         }
       ]
     },
@@ -1325,10 +1273,6 @@
         },
         {
           "path": "src/server.js",
-          "mode": "100644"
-        },
-        {
-          "path": "template.json",
           "mode": "100644"
         }
       ]
