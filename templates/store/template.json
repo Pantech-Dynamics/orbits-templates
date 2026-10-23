@@ -1,0 +1,12 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Store",
+  "description": "Product pages, cart, checkout",
+  "category": "commerce",
+  "framework": "nextjs",
+  "framework_label": "Next.js",
+  "required_env": [
+    { "key": "PAYSTACK_SECRET_KEY", "hint": "From Paystack, Settings → API Keys. Use the test key (sk_test_…) until you take real payments." }
+  ],
+  "order": 10
+}

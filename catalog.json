@@ -2,6 +2,23 @@
   "version": 1,
   "items": [
     {
+      "key": "store",
+      "path": "templates/store",
+      "name": "Store",
+      "description": "Product pages, cart, checkout",
+      "category": "commerce",
+      "framework": "nextjs",
+      "framework_label": "Next.js",
+      "required_env": [
+        {
+          "key": "PAYSTACK_SECRET_KEY",
+          "hint": "From Paystack, Settings → API Keys. Use the test key (sk_test_…) until you take real payments."
+        }
+      ],
+      "optional_env": [],
+      "order": 10
+    },
+    {
       "key": "events-page",
       "path": "templates/events-page",
       "name": "Events page",
@@ -63,6 +80,23 @@
       "required_env": [],
       "optional_env": [],
       "order": 30
+    },
+    {
+      "key": "portfolio",
+      "path": "templates/portfolio",
+      "name": "Portfolio",
+      "description": "Case studies and a contact form",
+      "category": "content",
+      "framework": "nextjs",
+      "framework_label": "Next.js",
+      "required_env": [],
+      "optional_env": [
+        {
+          "key": "CONTACT_WEBHOOK_URL",
+          "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API."
+        }
+      ],
+      "order": 40
     },
     {
       "key": "web-app",

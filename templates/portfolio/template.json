@@ -1,0 +1,10 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Portfolio",
+  "description": "Case studies and a contact form",
+  "category": "content",
+  "framework": "nextjs",
+  "framework_label": "Next.js",
+  "optional_env": [{ "key": "CONTACT_WEBHOOK_URL", "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API." }],
+  "order": 40
+}
