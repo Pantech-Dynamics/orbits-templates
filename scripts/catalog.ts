@@ -25,7 +25,8 @@ async function filesOf(where: string) {
   const files = [];
   for (const path of paths) {
     const info = await stat(join(ROOT, path)).catch(() => null);
-    if (!info?.isFile()) continue;
+    // The manifest describes the template to Orbit; the new repository doesn't need it.
+    if (!info?.isFile() || path === `${where}/template.json`) continue;
     files.push({ path: path.slice(where.length + 1), mode: info.mode & 0o111 ? "100755" : "100644", size: info.size });
   }
   return files;
