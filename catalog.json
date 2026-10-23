@@ -2,6 +2,23 @@
   "version": 1,
   "items": [
     {
+      "key": "events-page",
+      "path": "templates/events-page",
+      "name": "Events page",
+      "description": "Schedule, speakers and tickets",
+      "category": "commerce",
+      "framework": "sveltekit",
+      "framework_label": "SvelteKit",
+      "required_env": [],
+      "optional_env": [
+        {
+          "key": "RSVP_WEBHOOK_URL",
+          "hint": "Each free RSVP is POSTed here: Slack, Zapier, your own API."
+        }
+      ],
+      "order": 20
+    },
+    {
       "key": "marketing-site",
       "path": "templates/marketing-site",
       "name": "Marketing site",
@@ -34,6 +51,18 @@
       },
       "node_version": "24.x",
       "order": 20
+    },
+    {
+      "key": "blog",
+      "path": "templates/blog",
+      "name": "Blog",
+      "description": "Posts written in Markdown",
+      "category": "content",
+      "framework": "sveltekit",
+      "framework_label": "SvelteKit",
+      "required_env": [],
+      "optional_env": [],
+      "order": 30
     },
     {
       "key": "web-app",

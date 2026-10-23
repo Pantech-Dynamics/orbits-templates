@@ -1,0 +1,9 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Blog",
+  "description": "Posts written in Markdown",
+  "category": "content",
+  "framework": "sveltekit",
+  "framework_label": "SvelteKit",
+  "order": 30
+}

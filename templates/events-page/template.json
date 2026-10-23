@@ -1,0 +1,10 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Events page",
+  "description": "Schedule, speakers and tickets",
+  "category": "commerce",
+  "framework": "sveltekit",
+  "framework_label": "SvelteKit",
+  "optional_env": [{ "key": "RSVP_WEBHOOK_URL", "hint": "Each free RSVP is POSTed here: Slack, Zapier, your own API." }],
+  "order": 20
+}
