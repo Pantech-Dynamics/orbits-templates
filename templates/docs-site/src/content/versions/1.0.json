@@ -1,0 +1,32 @@
+{
+  "sidebar": [
+    {
+      "label": "Start here",
+      "items": [
+        "index",
+        "getting-started"
+      ]
+    },
+    {
+      "label": "Guides",
+      "items": [
+        {
+          "autogenerate": {
+            "directory": "guides"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Reference",
+      "items": [
+        {
+          "autogenerate": {
+            "directory": "reference"
+          }
+        }
+      ]
+    }
+  ],
+  "excluded": []
+}

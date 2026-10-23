@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+
+const plans = [
+  { name: "Starter", price: "Free", per: "", blurb: "For getting started.", features: ["20 invoices a month", "Payment links", "Email reminders"], cta: "Start free" },
+  { name: "Growth", price: "₦15,000", per: "/month", blurb: "For a business that's busy.", features: ["Unlimited invoices", "WhatsApp reminders", "Automatic reconciliation", "3 team members"], cta: "Start a free trial", featured: true },
+  { name: "Scale", price: "Let's talk", per: "", blurb: "For finance teams.", features: ["Everything in Growth", "Approvals and roles", "Accounting integrations", "A named contact"], cta: "Contact sales" },
+];
+
+const faqs = [
+  { q: "Can I change plans later?", a: "Yes, any time. Upgrades apply straight away; downgrades at the end of the month." },
+  { q: "Do you take a cut of payments?", a: "No. You pay your payment provider's usual fee and nothing more to us." },
+  { q: "Which currencies do you support?", a: "Naira, cedi, shilling, rand, dollar, pound and euro, with more on the way." },
+];
+---
+
+<Base title="Pricing" description="Simple plans that grow with your business.">
+  <section class="container section pricing-head">
+    <h1>Simple pricing</h1>
+    <p class="lede">Start free. Upgrade when you're sending more than twenty invoices a month.</p>
+  </section>
+
+  <section class="container plans">
+    {
+      plans.map((plan) => (
+        <article class:list={["plan", { featured: plan.featured }]}>
+          {plan.featured && <p class="tag">Most popular</p>}
+          <h2>{plan.name}</h2>
+          <p class="blurb">{plan.blurb}</p>
+          <p class="price">
+            {plan.price}
+            <span>{plan.per}</span>
+          </p>
+          <ul>
+            {plan.features.map((f) => (
+              <li>{f}</li>
+            ))}
+          </ul>
+          <a href="#" class:list={["button", { ghost: !plan.featured }]}>
+            {plan.cta}
+          </a>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="container section faq">
+    <h2 class="section-title">Questions</h2>
+    {
+      faqs.map(({ q, a }) => (
+        <details>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))
+    }
+  </section>
+</Base>

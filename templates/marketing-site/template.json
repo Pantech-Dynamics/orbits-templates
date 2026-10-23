@@ -1,0 +1,11 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Marketing site",
+  "description": "Fast pages and a blog",
+  "category": "content",
+  "framework": "astro",
+  "framework_label": "Astro",
+  "workload": { "type": "static", "output_directory": "dist" },
+  "node_version": "24.x",
+  "order": 10
+}

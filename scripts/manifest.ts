@@ -37,6 +37,8 @@ export const Manifest = z.strictObject({
   optional_env: z.array(EnvVar).default([]),
   /** How it runs. Left out, the API picks the framework's default (Next.js and SvelteKit as functions, node as an app, the rest static). */
   workload: Workload.optional(),
+  /** The project's Node.js version when the framework needs a newer one than the API's default (22.x). */
+  node_version: z.enum(["22.x", "24.x"]).optional(),
   /** Lower comes first on the New project screen. */
   order: z.number().int().default(100),
 });

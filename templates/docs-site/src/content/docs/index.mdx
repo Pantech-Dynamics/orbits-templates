@@ -1,0 +1,23 @@
+---
+title: Acme SDK
+description: Call the Acme API from JavaScript, with types, retries and webhooks built in.
+template: splash
+hero:
+  tagline: Call the Acme API from JavaScript, with types, retries and webhooks built in.
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+    - text: API reference
+      link: /reference/client/
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <Card title="Typed" icon="seti:typescript">Every request and response is typed, so your editor knows the API.</Card>
+  <Card title="Resilient" icon="random">Requests that fail on the network are retried with backoff.</Card>
+  <Card title="Webhooks" icon="rocket">Verify and parse incoming events in one call.</Card>
+  <Card title="Searchable" icon="magnifier">Press <kbd>/</kbd> to search every page of these docs.</Card>
+</CardGrid>

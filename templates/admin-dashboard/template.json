@@ -1,0 +1,10 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Admin dashboard",
+  "description": "Tables, charts and sign-in",
+  "category": "apps",
+  "framework": "vite",
+  "framework_label": "Vite + React",
+  "workload": { "type": "static", "output_directory": "dist", "spa_fallback": true },
+  "order": 15
+}

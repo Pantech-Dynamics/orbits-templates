@@ -1,0 +1,75 @@
+---
+import Base from "../layouts/Base.astro";
+import Feature from "../components/Feature.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "../site";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const date = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium" });
+---
+
+<Base>
+  <section class="hero container">
+    <p class="eyebrow">New: automatic reminders on WhatsApp</p>
+    <h1>{SITE.tagline}</h1>
+    <p class="lede">{SITE.description}</p>
+    <div class="actions">
+      <a href={SITE.cta.href} class="button">{SITE.cta.label}</a>
+      <a href="#features" class="button ghost">See how it works</a>
+    </div>
+    <p class="note">Free for your first 20 invoices a month. No card needed.</p>
+  </section>
+
+  <section class="proof container" aria-label="Customers">
+    <p>Trusted by 2,000 small businesses across Africa</p>
+    <ul>
+      <li>Kinetic</li>
+      <li>Baobab & Co</li>
+      <li>Northwind</li>
+      <li>Savanna Labs</li>
+      <li>Lumen</li>
+    </ul>
+  </section>
+
+  <section id="features" class="container section">
+    <h2 class="section-title">Everything between “sent” and “paid”</h2>
+    <div class="features">
+      <Feature title="Send in seconds" icon="⚡">Pick a customer, add line items, send. Your logo, your colours, their currency.</Feature>
+      <Feature title="Chase on autopilot" icon="⏰">Polite reminders go out before and after the due date, by email or WhatsApp.</Feature>
+      <Feature title="Paid by card or transfer" icon="💳">Every invoice carries a payment link. Money lands in your account, not ours.</Feature>
+      <Feature title="Books that balance" icon="📒">Payments match their invoices on their own, ready for your accountant.</Feature>
+    </div>
+  </section>
+
+  <section class="container section quote">
+    <blockquote>
+      “We used to spend Fridays chasing payments. Now Acme does it, and we get paid nine days sooner on average.”
+    </blockquote>
+    <p>Amaka Eze, founder of Baobab & Co</p>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section class="container section">
+        <div class="section-head">
+          <h2 class="section-title">From the blog</h2>
+          <a href="/blog">All posts →</a>
+        </div>
+        <div class="posts">
+          {posts.map((post) => (
+            <a href={`/blog/${post.id}`} class="post-card">
+              <time datetime={post.data.date.toISOString()}>{date.format(post.data.date)}</time>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="container section cta">
+    <h2>Get paid for the work you've already done.</h2>
+    <a href={SITE.cta.href} class="button">{SITE.cta.label}</a>
+  </section>
+</Base>

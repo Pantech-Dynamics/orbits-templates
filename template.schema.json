@@ -136,6 +136,13 @@
         }
       ]
     },
+    "node_version": {
+      "type": "string",
+      "enum": [
+        "22.x",
+        "24.x"
+      ]
+    },
     "order": {
       "default": 100,
       "type": "integer",

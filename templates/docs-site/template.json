@@ -1,0 +1,11 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Docs site",
+  "description": "Docs with search and versions",
+  "category": "content",
+  "framework": "astro",
+  "framework_label": "Astro",
+  "workload": { "type": "static", "output_directory": "dist" },
+  "node_version": "24.x",
+  "order": 20
+}

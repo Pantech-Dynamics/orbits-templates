@@ -2,6 +2,40 @@
   "version": 1,
   "items": [
     {
+      "key": "marketing-site",
+      "path": "templates/marketing-site",
+      "name": "Marketing site",
+      "description": "Fast pages and a blog",
+      "category": "content",
+      "framework": "astro",
+      "framework_label": "Astro",
+      "required_env": [],
+      "optional_env": [],
+      "workload": {
+        "type": "static",
+        "output_directory": "dist"
+      },
+      "node_version": "24.x",
+      "order": 10
+    },
+    {
+      "key": "docs-site",
+      "path": "templates/docs-site",
+      "name": "Docs site",
+      "description": "Docs with search and versions",
+      "category": "content",
+      "framework": "astro",
+      "framework_label": "Astro",
+      "required_env": [],
+      "optional_env": [],
+      "workload": {
+        "type": "static",
+        "output_directory": "dist"
+      },
+      "node_version": "24.x",
+      "order": 20
+    },
+    {
       "key": "web-app",
       "path": "templates/web-app",
       "name": "Web app",
@@ -17,6 +51,23 @@
         "spa_fallback": true
       },
       "order": 10
+    },
+    {
+      "key": "admin-dashboard",
+      "path": "templates/admin-dashboard",
+      "name": "Admin dashboard",
+      "description": "Tables, charts and sign-in",
+      "category": "apps",
+      "framework": "vite",
+      "framework_label": "Vite + React",
+      "required_env": [],
+      "optional_env": [],
+      "workload": {
+        "type": "static",
+        "output_directory": "dist",
+        "spa_fallback": true
+      },
+      "order": 15
     },
     {
       "key": "elysia-htmx",
