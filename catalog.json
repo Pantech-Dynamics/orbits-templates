@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "key": "web-app",
+      "path": "templates/web-app",
+      "name": "Web app",
+      "description": "Single-page app",
+      "category": "apps",
+      "framework": "vite",
+      "framework_label": "Vite + React",
+      "required_env": [],
+      "optional_env": [],
+      "workload": {
+        "type": "static",
+        "output_directory": "dist",
+        "spa_fallback": true
+      },
+      "order": 10
+    },
+    {
+      "key": "elysia-htmx",
+      "path": "templates/elysia-htmx",
+      "name": "Elysia + htmx",
+      "description": "Server-rendered pages with JSX and htmx on Bun",
+      "category": "apps",
+      "framework": "elysia",
+      "framework_label": "Elysia",
+      "required_env": [],
+      "optional_env": [],
+      "workload": {
+        "type": "app",
+        "port": 3000,
+        "health_check_path": "/health"
+      },
+      "order": 20
+    },
+    {
+      "key": "static-site",
+      "path": "templates/static-site",
+      "name": "Static site",
+      "description": "Plain HTML, CSS and JS",
+      "category": "apps",
+      "framework": "html",
+      "framework_label": "HTML",
+      "required_env": [],
+      "optional_env": [],
+      "order": 30
+    },
+    {
+      "key": "elysia-api",
+      "path": "templates/elysia-api",
+      "name": "Elysia API",
+      "description": "Typed routes, validation and OpenAPI docs on Bun",
+      "category": "apis",
+      "framework": "elysia",
+      "framework_label": "Elysia",
+      "required_env": [],
+      "optional_env": [
+        {
+          "key": "DATABASE_URL",
+          "hint": "A Postgres connection string. Without it, notes are kept in memory."
+        },
+        {
+          "key": "CORS_ORIGIN",
+          "hint": "Origins allowed to call the API, separated by commas. Any origin when unset."
+        }
+      ],
+      "workload": {
+        "type": "app",
+        "port": 3000,
+        "health_check_path": "/health"
+      },
+      "order": 5
+    },
+    {
+      "key": "api",
+      "path": "templates/api",
+      "name": "API",
+      "description": "REST API with a health check",
+      "category": "apis",
+      "framework": "node",
+      "framework_label": "Node.js",
+      "required_env": [
+        {
+          "key": "DATABASE_URL",
+          "hint": "Your Postgres connection string. Add ?sslmode=require if your host needs TLS."
+        }
+      ],
+      "optional_env": [],
+      "workload": {
+        "type": "app",
+        "port": 3000,
+        "health_check_path": "/"
+      },
+      "order": 10
+    },
+    {
+      "key": "webhook-receiver",
+      "path": "templates/webhook-receiver",
+      "name": "Webhook receiver",
+      "description": "Verify and store incoming events",
+      "category": "apis",
+      "framework": "node",
+      "framework_label": "Node.js",
+      "required_env": [
+        {
+          "key": "WEBHOOK_SECRET",
+          "hint": "The secret your sender signs each event with. Events without a valid signature are refused."
+        }
+      ],
+      "optional_env": [],
+      "workload": {
+        "type": "app",
+        "port": 3000,
+        "health_check_path": "/"
+      },
+      "order": 30
+    },
+    {
+      "key": "waitlist",
+      "path": "templates/waitlist",
+      "name": "Waitlist",
+      "description": "One page that collects emails",
+      "category": "apis",
+      "framework": "node",
+      "framework_label": "Node.js",
+      "required_env": [],
+      "optional_env": [
+        {
+          "key": "WAITLIST_WEBHOOK_URL",
+          "hint": "Each sign-up is POSTed here: Slack, Zapier, a sheet."
+        },
+        {
+          "key": "WAITLIST_ADMIN_TOKEN",
+          "hint": "Lets you download the list from /export.csv."
+        }
+      ],
+      "workload": {
+        "type": "app",
+        "port": 3000,
+        "health_check_path": "/"
+      },
+      "order": 40
+    }
+  ]
+}

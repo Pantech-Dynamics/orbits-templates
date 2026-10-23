@@ -1,0 +1,10 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Web app",
+  "description": "Single-page app",
+  "category": "apps",
+  "framework": "vite",
+  "framework_label": "Vite + React",
+  "workload": { "type": "static", "output_directory": "dist", "spa_fallback": true },
+  "order": 10
+}

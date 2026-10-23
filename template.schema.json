@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "commerce",
+        "content",
+        "apps",
+        "apis"
+      ]
+    },
+    "framework": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "framework_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "required_env": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          },
+          "hint": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "optional_env": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          },
+          "hint": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "workload": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "static"
+            },
+            "output_directory": {
+              "type": "string"
+            },
+            "spa_fallback": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "app"
+            },
+            "port": {
+              "default": 3000,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "health_check_path": {
+              "default": "/",
+              "type": "string",
+              "format": "starts_with",
+              "pattern": "^\\/.*"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "function"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "order": {
+      "default": 100,
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "category",
+    "framework",
+    "framework_label"
+  ],
+  "additionalProperties": false
+}

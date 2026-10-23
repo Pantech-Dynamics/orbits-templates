@@ -1,0 +1,11 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Webhook receiver",
+  "description": "Verify and store incoming events",
+  "category": "apis",
+  "framework": "node",
+  "framework_label": "Node.js",
+  "required_env": [{ "key": "WEBHOOK_SECRET", "hint": "The secret your sender signs each event with. Events without a valid signature are refused." }],
+  "workload": { "type": "app", "port": 3000, "health_check_path": "/" },
+  "order": 30
+}

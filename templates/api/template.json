@@ -1,0 +1,11 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "API",
+  "description": "REST API with a health check",
+  "category": "apis",
+  "framework": "node",
+  "framework_label": "Node.js",
+  "required_env": [{ "key": "DATABASE_URL", "hint": "Your Postgres connection string. Add ?sslmode=require if your host needs TLS." }],
+  "workload": { "type": "app", "port": 3000, "health_check_path": "/" },
+  "order": 10
+}

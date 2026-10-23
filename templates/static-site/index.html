@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Static site</title>
+    <meta name="description" content="A plain HTML, CSS and JavaScript site, deployed on Orbit." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/main.js" defer></script>
+  </head>
+  <body>
+    <header class="bar">
+      <a class="brand" href="/">Static site</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <button class="theme" type="button" aria-label="Switch theme">◐</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">HTML · CSS · JavaScript</p>
+        <h1>No build step. No framework. Just files.</h1>
+        <p class="lede">
+          Edit <code>index.html</code>, push, and Orbit serves the new version in seconds. Add pages by adding
+          <code>.html</code> files next to this one.
+        </p>
+        <div class="actions">
+          <a class="button" href="/about.html">What's in here</a>
+          <button class="button ghost" type="button" data-count>Clicked 0 times</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article>
+          <h2>Pages</h2>
+          <p><code>about.html</code> is served at <code>/about.html</code>. Folders work too: <code>docs/index.html</code> is <code>/docs/</code>.</p>
+        </article>
+        <article>
+          <h2>Styles</h2>
+          <p>Everything lives in <code>styles.css</code>, with light and dark themes from the same few colours.</p>
+        </article>
+        <article>
+          <h2>Scripts</h2>
+          <p><code>main.js</code> runs on every page. It remembers your theme and counts clicks on the button above.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="foot">Deployed on Orbit</footer>
+  </body>
+</html>

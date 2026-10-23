@@ -1,0 +1,23 @@
+{
+  "name": "elysia-api",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --target bun --minify-whitespace --minify-syntax --outdir dist",
+    "start": "bun dist/index.js",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@elysia/cors": "^1.4.2",
+    "@elysia/openapi": "^1.4.16",
+    "elysia": "^1.4.30"
+  },
+  "devDependencies": {
+    "@elysia/eden": "^1.4.10",
+    "@types/bun": "^1.4.4",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Something new is coming</title>
+    <meta name="description" content="Join the waitlist and be first to know when we launch." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="badge">Coming soon</p>
+      <h1>Something new is on its way.</h1>
+      <p class="lede">Leave your email and we'll tell you the moment it's ready. One email, no spam.</p>
+
+      <form method="post" action="/join" novalidate>
+        <label class="sr" for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+        <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="count"><strong>{{count}}</strong> people have joined so far.</p>
+    </main>
+
+    <script>
+      const form = document.querySelector("form");
+      const status = document.querySelector(".status");
+      const params = new URLSearchParams(location.search);
+      if (params.has("joined")) status.textContent = "You're on the list. We'll email you when it's ready.";
+      if (params.has("error")) status.textContent = "That doesn't look like an email address.";
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const button = form.querySelector("button");
+        button.disabled = true;
+        status.textContent = "";
+        try {
+          const res = await fetch("/join", {
+            method: "POST",
+            headers: { accept: "application/json", "content-type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(new FormData(form))),
+          });
+          const { ok, message } = await res.json();
+          status.textContent = message;
+          status.dataset.tone = ok ? "good" : "bad";
+          if (ok) form.reset();
+        } catch {
+          status.textContent = "That didn't go through. Try again.";
+          status.dataset.tone = "bad";
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Elysia + htmx",
+  "description": "Server-rendered pages with JSX and htmx on Bun",
+  "category": "apps",
+  "framework": "elysia",
+  "framework_label": "Elysia",
+  "workload": { "type": "app", "port": 3000, "health_check_path": "/health" },
+  "order": 20
+}

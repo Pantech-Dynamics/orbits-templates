@@ -1,0 +1,14 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Waitlist",
+  "description": "One page that collects emails",
+  "category": "apis",
+  "framework": "node",
+  "framework_label": "Node.js",
+  "optional_env": [
+    { "key": "WAITLIST_WEBHOOK_URL", "hint": "Each sign-up is POSTed here: Slack, Zapier, a sheet." },
+    { "key": "WAITLIST_ADMIN_TOKEN", "hint": "Lets you download the list from /export.csv." }
+  ],
+  "workload": { "type": "app", "port": 3000, "health_check_path": "/" },
+  "order": 40
+}

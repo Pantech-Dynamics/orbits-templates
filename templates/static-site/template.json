@@ -1,0 +1,9 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Static site",
+  "description": "Plain HTML, CSS and JS",
+  "category": "apps",
+  "framework": "html",
+  "framework_label": "HTML",
+  "order": 30
+}

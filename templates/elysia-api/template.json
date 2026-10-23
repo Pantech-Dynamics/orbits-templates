@@ -1,0 +1,14 @@
+{
+  "$schema": "../../template.schema.json",
+  "name": "Elysia API",
+  "description": "Typed routes, validation and OpenAPI docs on Bun",
+  "category": "apis",
+  "framework": "elysia",
+  "framework_label": "Elysia",
+  "optional_env": [
+    { "key": "DATABASE_URL", "hint": "A Postgres connection string. Without it, notes are kept in memory." },
+    { "key": "CORS_ORIGIN", "hint": "Origins allowed to call the API, separated by commas. Any origin when unset." }
+  ],
+  "workload": { "type": "app", "port": 3000, "health_check_path": "/health" },
+  "order": 5
+}

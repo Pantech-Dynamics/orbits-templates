@@ -1,0 +1,15 @@
+{
+  "name": "orbits-templates",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "scripts": {
+    "catalog": "bun scripts/catalog.ts",
+    "check": "bun scripts/catalog.ts --check",
+    "verify": "bun scripts/verify.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "zod": "^4.6.7"
+  }
+}
