@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,16 +19,18 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const product = productBySlug((await params).slug);
   if (!product) notFound();
   return (
-    <main className="detail">
-      <Tile product={product} large />
-      <div>
+    <main className="page detail">
+      <div className="panel art reveal">
+        <Tile product={product} large />
+      </div>
+      <div className="panel info reveal" style={{ "--delay": "60ms" } as CSSProperties}>
         <Link href="/" className="back">
           ← All products
         </Link>
-        <h1>{product.name}</h1>
-        <p className="price">{naira(product.price)}</p>
-        <p className="muted">{product.blurb}</p>
-        <p>{product.description}</p>
+        <h1 className="heading">{product.name}</h1>
+        <p className="price num">{naira(product.price)}</p>
+        <span className="badge plain">{product.blurb}</span>
+        <p className="description">{product.description}</p>
         <AddToCart slug={product.slug} />
       </div>
     </main>

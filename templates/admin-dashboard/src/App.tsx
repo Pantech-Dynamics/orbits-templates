@@ -19,33 +19,42 @@ export default function App() {
 
   const Page = PAGES[path]?.page;
   return (
-    <div className="layout">
-      <aside className="side">
-        <div className="brand">
-          <span className="logo" aria-hidden /> Dashboard
+    <>
+      <header className="top">
+        <div className="top-row">
+          <span className="brand">
+            <span className="tile solid">D</span>
+            Dashboard
+          </span>
+          <div className="me">
+            <span className="tile">{user.name.slice(0, 2)}</span>
+            <span className="email">{user.email}</span>
+            <button className="btn btn-sm" onClick={signOut}>
+              Sign out
+            </button>
+          </div>
         </div>
-        <nav>
+        <nav className="tabs">
           {Object.entries(PAGES).map(([href, { title }]) => (
             <Link key={href} href={href}>
               {title}
             </Link>
           ))}
         </nav>
-        <div className="me">
-          <span>{user.email}</span>
-          <button onClick={signOut}>Sign out</button>
-        </div>
-      </aside>
-      <main className="content">
+      </header>
+      <main className="content" key={path}>
         {Page ? (
           <Page />
         ) : (
-          <div className="none">
-            <h1>Not found</h1>
-            <Link href="/">Back to the overview</Link>
+          <div className="panel hatch none reveal">
+            <span className="badge plain mono">404</span>
+            <h1 className="heading">Not found</h1>
+            <Link href="/" className="btn btn-primary">
+              Back to the overview
+            </Link>
           </div>
         )}
       </main>
-    </div>
+    </>
   );
 }

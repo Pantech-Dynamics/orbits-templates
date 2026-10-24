@@ -4,6 +4,8 @@ import { Link } from "../link";
 import { navigate } from "../router";
 import { NotFound } from "./NotFound";
 
+const when = new Intl.DateTimeFormat(undefined, { timeStyle: "short" });
+
 export function NotePage({ id }: { id: string }) {
   const note = useNotes().find((n) => n.id === id);
 
@@ -17,11 +19,12 @@ export function NotePage({ id }: { id: string }) {
   if (!note) return <NotFound />;
 
   return (
-    <article className="editor">
-      <div className="toolbar">
+    <article className="panel editor">
+      <div className="panel-head">
         <Link href="/">← All notes</Link>
+        <span className="badge green saved">Saved {when.format(note.updatedAt)}</span>
         <button
-          className="danger"
+          className="btn btn-sm danger"
           onClick={() => {
             if (confirm("Delete this note?")) {
               deleteNote(id);
@@ -33,7 +36,7 @@ export function NotePage({ id }: { id: string }) {
         </button>
       </div>
       <input
-        className="title"
+        className="title-input"
         value={note.title}
         placeholder="Untitled"
         onChange={(e) => updateNote(id, { title: e.target.value })}
@@ -41,7 +44,6 @@ export function NotePage({ id }: { id: string }) {
         autoFocus={!note.title}
       />
       <textarea value={note.body} placeholder="Write something…" onChange={(e) => updateNote(id, { body: e.target.value })} aria-label="Note" />
-      <p className="hint">Saved as you type.</p>
     </article>
   );
 }

@@ -1,0 +1,526 @@
+/*
+ * Orbit's design kit, the look of the Orbit console: hairline borders, square corners, Hanken Grotesk with
+ * JetBrains Mono for anything technical, zinc greys and one blue accent, light and dark.
+ *
+ * Every template carries this same file as orbit.css. Edit kit/orbit.css in the templates repository and run
+ * `bun run kit` to copy it; the catalog check fails when a copy drifts.
+ */
+
+/* ——— Tokens ——— */
+
+:root {
+  --canvas: #ffffff;
+  --surface: #fafafa;
+  --fill: #f4f4f5;
+  --ink: #18181b;
+  --grey-700: #3f3f46;
+  --grey-600: #52525b;
+  --grey-500: #71717a;
+  --grey-400: #a1a1aa;
+  --line: rgb(0 0 0 / 0.08);
+  --edge: rgb(0 0 0 / 0.12);
+  --accent: #1e56ff;
+  --accent-soft: #eef2ff;
+  --accent-fg: #ffffff;
+  --green: #16a34a;
+  --green-soft: #ecfdf3;
+  --amber: #b45309;
+  --amber-soft: #fffbeb;
+  --red: #dc2626;
+  --red-soft: #fef2f2;
+  --hatch: rgb(0 0 0 / 0.06);
+
+  --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* The console's motion: one strong ease-out, short durations. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --press: 150ms;
+  --hover: 150ms;
+  --enter: 400ms;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #09090b;
+    --surface: #111113;
+    --fill: #18181b;
+    --ink: #fafafa;
+    --grey-700: #d4d4d8;
+    --grey-600: #b4b4bc;
+    --grey-500: #a1a1aa;
+    --grey-400: #71717a;
+    --line: rgb(255 255 255 / 0.08);
+    --edge: rgb(255 255 255 / 0.14);
+    --accent: #5b86ff;
+    --accent-soft: rgb(91 134 255 / 0.14);
+    --green: #4ade80;
+    --green-soft: rgb(74 222 128 / 0.12);
+    --amber: #fbbf24;
+    --amber-soft: rgb(251 191 36 / 0.12);
+    --red: #f87171;
+    --red-soft: rgb(248 113 113 / 0.12);
+    --hatch: rgb(255 255 255 / 0.06);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --canvas: #09090b;
+  --surface: #111113;
+  --fill: #18181b;
+  --ink: #fafafa;
+  --grey-700: #d4d4d8;
+  --grey-600: #b4b4bc;
+  --grey-500: #a1a1aa;
+  --grey-400: #71717a;
+  --line: rgb(255 255 255 / 0.08);
+  --edge: rgb(255 255 255 / 0.14);
+  --accent: #5b86ff;
+  --accent-soft: rgb(91 134 255 / 0.14);
+  --green: #4ade80;
+  --green-soft: rgb(74 222 128 / 0.12);
+  --amber: #fbbf24;
+  --amber-soft: rgb(251 191 36 / 0.12);
+  --red: #f87171;
+  --red-soft: rgb(248 113 113 / 0.12);
+  --hatch: rgb(255 255 255 / 0.06);
+  color-scheme: dark;
+}
+
+/* ——— Base ——— */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 14px/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+code,
+kbd,
+pre,
+.mono {
+  font-family: var(--font-code);
+}
+
+/* Figures that line up, in the body face: for money, since JetBrains Mono has no ₦. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* iOS zooms into a field under 16px; touch screens get 16px, a mouse keeps the design's size. */
+@media (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+}
+
+/* ——— Layout ——— */
+
+/* The console's ground: grey, with panels on it a few pixels apart. */
+.ground {
+  min-height: 100dvh;
+  background: var(--fill);
+}
+
+.panel {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--grey-500);
+  font-size: 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+@media (width >= 40rem) {
+  .wrap {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* ——— Type ——— */
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.heading {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+.subheading {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--grey-500);
+}
+
+.label {
+  color: var(--grey-500);
+  font-size: 12px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  color: var(--grey-500);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ——— Controls ——— */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.25rem;
+  padding: 0 0.875rem;
+  border: 1px solid var(--edge);
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--hover) ease,
+    border-color var(--hover) ease,
+    scale var(--press) var(--ease-out);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn:active {
+  scale: 0.97;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.btn-primary {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.btn-accent {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.btn-sm {
+  height: 1.75rem;
+  padding: 0 0.625rem;
+  font-size: 12px;
+}
+
+.btn-lg {
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  font-size: 14px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    background: var(--surface);
+  }
+
+  .btn-primary:hover {
+    background: color-mix(in srgb, var(--ink) 88%, var(--canvas));
+  }
+
+  .btn-accent:hover {
+    background: color-mix(in srgb, var(--accent) 90%, var(--ink));
+  }
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--edge);
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: 13px;
+  transition: border-color var(--hover) ease;
+}
+
+.input::placeholder {
+  color: var(--grey-400);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+textarea.input {
+  height: auto;
+  padding-block: 0.5rem;
+  resize: vertical;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  color: var(--grey-700);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* A grey bar with the chosen item raised, like the console's range picker and tabs. */
+.segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--fill);
+}
+
+.segmented > * {
+  display: inline-flex;
+  align-items: center;
+  height: 1.875rem;
+  padding: 0 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--grey-500);
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--hover) ease,
+    color var(--hover) ease;
+}
+
+.segmented > :hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.segmented > [aria-selected="true"],
+.segmented > [aria-current="page"],
+.segmented > [aria-pressed="true"] {
+  background: var(--canvas);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ——— Status ——— */
+
+/* A soft tint with a square dot: ■ Ready. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.125rem 0.4375rem;
+  background: var(--fill);
+  color: var(--grey-600);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+}
+
+.badge.plain::before {
+  display: none;
+}
+
+.badge.green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.badge.amber {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.badge.red {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.badge.accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* A square with a letter or two in it, for a person or a project. */
+.tile {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  background: var(--fill);
+  color: var(--grey-700);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tile.solid {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* Figma's hatch: 1px lines on a slope, for empty and decorative areas. */
+.hatch {
+  background-image: repeating-linear-gradient(117.7deg, var(--hatch) 0 1px, transparent 1px 10.985px);
+}
+
+/* ——— Motion ——— */
+
+/*
+ * Load-time reveal, like the console: a fade and an 8px rise on the house curve. Stagger siblings with
+ * style="--delay: 40ms", 80ms… A transition from @starting-style rather than a keyframe, so nothing replays.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition:
+      opacity var(--dur, var(--enter)) var(--ease-out) var(--delay, 0ms),
+      transform var(--dur, var(--enter)) var(--ease-out) var(--delay, 0ms);
+
+    @starting-style {
+      opacity: 0;
+      transform: var(--from, translateY(8px));
+    }
+  }
+}
+
+/*
+ * Scroll reveal for content further down a page: the same fade and rise, played as the element enters the
+ * viewport. Tied to scroll by the browser, so nothing runs in JavaScript; where that isn't supported it's shown.
+ */
+@supports (animation-timeline: view()) {
+  /* Screen only: on paper nothing scrolls into view, so it would print blank. */
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: orbit-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes orbit-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* A row or card that answers the pointer: a tint, never a jump. */
+.hoverable {
+  transition:
+    background-color var(--hover) ease,
+    border-color var(--hover) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hoverable:hover {
+    background-color: var(--surface);
+  }
+}
+
+/* Reduced motion: no movement, keep the colour changes that explain state. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn:active {
+    scale: none;
+  }
+}

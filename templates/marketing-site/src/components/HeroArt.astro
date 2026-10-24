@@ -1,0 +1,33 @@
+---
+// The product, drawn in HTML: a few invoices the way the app lists them. Swap it for a screenshot when you have one.
+const rows = [
+  { id: "INV-0142", who: "Baobab & Co", amount: "₦420,000", status: "Paid", tone: "green" },
+  { id: "INV-0141", who: "Savanna Labs", amount: "₦185,500", status: "Reminder sent", tone: "accent" },
+  { id: "INV-0140", who: "Northwind", amount: "₦96,000", status: "Due in 3 days", tone: "amber" },
+  { id: "INV-0139", who: "Kinetic", amount: "₦1,250,000", status: "Paid", tone: "green" },
+];
+---
+
+<div class="art hatch" aria-hidden="true">
+  <div class="panel art-card">
+    <div class="panel-head">
+      <span>Invoices</span>
+      <span class="badge green">₦1.67M paid this week</span>
+    </div>
+    <ul>
+      {
+        rows.map((r, i) => (
+          <li class="reveal" style={`--delay: ${260 + i * 50}ms`}>
+            <span class="tile">{r.who.slice(0, 2)}</span>
+            <span class="art-who">
+              <strong>{r.who}</strong>
+              <small class="mono">{r.id}</small>
+            </span>
+            <span class={`badge ${r.tone}`}>{r.status}</span>
+            <span class="num art-amount">{r.amount}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

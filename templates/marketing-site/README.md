@@ -9,7 +9,8 @@ at build time, with no JavaScript shipped unless you add some, so it loads fast 
 - **Pages** are in `src/pages/`: `index.astro`, `pricing.astro`, the blog, a 404 and an RSS feed.
 - **Blog posts** are Markdown files in `src/content/blog/`. Their front matter (`title`, `description`, `date`,
   optional `author` and `draft`) is checked at build time by the schema in `src/content.config.ts`.
-- **Styles** are in `src/styles/global.css`, with light and dark themes from a handful of variables.
+- **Styles**: `src/styles/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark),
+  shared by every Orbit template; `src/styles/global.css` is this site's layout on top of it.
 
 ## Run it locally
 

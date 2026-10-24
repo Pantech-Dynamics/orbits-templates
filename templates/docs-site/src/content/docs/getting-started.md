@@ -6,7 +6,7 @@ description: Install the SDK and make your first request.
 ## Install
 
 ```sh
-npm install @acme/sdk@2
+npm install @sahel/sdk@2
 ```
 
 ## Create a client
@@ -14,15 +14,15 @@ npm install @acme/sdk@2
 Find your API key in the dashboard under **Settings → API keys**.
 
 ```js
-import { Acme } from "@acme/sdk";
+import { Sahel } from "@sahel/sdk";
 
-const acme = new Acme({ apiKey: process.env.ACME_KEY });
+const sahel = new Sahel({ apiKey: process.env.SAHEL_KEY });
 ```
 
 ## Make a request
 
 ```js
-const invoice = await acme.createInvoice({ customer: "cus_123", amount: 25000, currency: "NGN" });
+const invoice = await sahel.createInvoice({ customer: "cus_123", amount: 25000, currency: "NGN" });
 console.log(invoice.id);
 ```
 

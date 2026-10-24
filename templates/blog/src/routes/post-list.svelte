@@ -4,13 +4,16 @@
   let { posts }: { posts: Post[] } = $props();
 </script>
 
-<ul class="posts">
-  {#each posts as post (post.slug)}
-    <li>
-      <a href="/posts/{post.slug}">
-        <h2>{post.title}</h2>
-        <p>{post.description}</p>
-        <small><time datetime={post.date}>{formatDate(post.date)}</time> · {post.minutes} min read</small>
+<ul class="panel posts">
+  {#each posts as post, i (post.slug)}
+    <li class="reveal" style="--delay: {40 + Math.min(i, 8) * 40}ms">
+      <a href="/posts/{post.slug}" class="hoverable">
+        <time class="mono" datetime={post.date}>{formatDate(post.date)}</time>
+        <span class="post-text">
+          <strong>{post.title}</strong>
+          <span>{post.description}</span>
+        </span>
+        <span class="badge plain">{post.minutes} min</span>
       </a>
     </li>
   {/each}

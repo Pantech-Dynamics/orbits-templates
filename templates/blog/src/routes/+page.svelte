@@ -11,14 +11,16 @@
   <meta name="description" content={SITE.description} />
 </svelte:head>
 
-<section class="intro">
-  <h1>{SITE.description}</h1>
+<section class="panel intro reveal">
+  <p class="eyebrow">{SITE.title} · by {SITE.author}</p>
+  <h1 class="title">{SITE.description}</h1>
 </section>
 
 <PostList posts={data.posts} />
 
-<aside class="tags">
+<aside class="panel tags reveal" style="--delay: 200ms" aria-label="Tags">
+  <span class="label">Tags</span>
   {#each data.tags as tag (tag)}
-    <a href="/tags/{tag}">#{tag}</a>
+    <a href="/tags/{tag}" class="badge plain">#{tag}</a>
   {/each}
 </aside>

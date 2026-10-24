@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Not found · Static site</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/orbit.css" />
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Before the first paint, so a saved theme never flashes the other one. -->
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="/main.js" defer></script>
   </head>
-  <body>
-    <main class="prose center">
-      <p class="eyebrow">404</p>
-      <h1>There's no page here.</h1>
-      <p><a href="/">Go home</a></p>
+  <body class="ground">
+    <header class="bar">
+      <div class="wrap bar-row">
+        <a class="brand" href="/"><span class="tile solid">S</span>Static site</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+        </nav>
+        <div class="segmented theme" role="group" aria-label="Theme">
+          <button type="button" data-theme-choice="light">Light</button>
+          <button type="button" data-theme-choice="dark">Dark</button>
+          <button type="button" data-theme-choice="">Auto</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap stack">
+      <section class="panel hatch missing reveal">
+        <span class="badge plain mono">404</span>
+        <h1 class="heading">There's no page here.</h1>
+        <p class="muted">The address may have a typo, or the page has moved.</p>
+        <a class="btn btn-primary" href="/">Go home</a>
+      </section>
     </main>
   </body>
 </html>

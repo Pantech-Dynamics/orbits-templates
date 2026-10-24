@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FONTS } from "@/lib/fonts";
 import { CartLink } from "./_components/cart-link";
+import "./orbit.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,16 +12,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={FONTS}>
+      <body className="ground">
         <header className="top">
-          <Link href="/" className="brand">
-            Kola Goods
-          </Link>
-          <CartLink />
+          <div className="top-row">
+            <Link href="/" className="brand">
+              <span className="tile solid">K</span>
+              Kola Goods
+            </Link>
+            <CartLink />
+          </div>
         </header>
         {children}
-        <footer className="bottom">Payments by Paystack · Delivery across Nigeria in 2–4 days</footer>
+        <footer className="bottom">
+          <span className="badge plain">Payments by Paystack</span>
+          <span className="badge plain">Delivery across Nigeria in 2–4 days</span>
+        </footer>
       </body>
     </html>
   );

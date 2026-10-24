@@ -20,3 +20,5 @@ npm run dev
   need nested layouts or data loading.
 - `src/notes.ts`: the notes, in `localStorage`. Replace its functions with calls to your API; the pages don't change.
 - `src/pages/`: one component per page.
+- `src/orbit.css`: Orbit's tokens and components (panels, buttons, badges, light and dark), shared by every Orbit
+  template. `src/index.css` is this app's own layout on top of it.

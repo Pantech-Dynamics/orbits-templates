@@ -5,8 +5,10 @@ export const metadata: Metadata = { title: "Your cart" };
 
 export default function CartPage() {
   return (
-    <main className="cart-page">
-      <h1>Your cart</h1>
+    <main className="page cart-page">
+      <section className="panel page-head reveal">
+        <h1 className="heading">Your cart</h1>
+      </section>
       <Cart />
     </main>
   );

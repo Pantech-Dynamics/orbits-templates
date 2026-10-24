@@ -3,7 +3,7 @@ title: Errors
 description: What the SDK throws, and when.
 ---
 
-Every error extends `AcmeError` and carries the request id, which support will ask for.
+Every error extends `SahelError` and carries the request id, which support will ask for.
 
 | Error | When |
 | --- | --- |

@@ -5,40 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About · Static site</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/orbit.css" />
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Before the first paint, so a saved theme never flashes the other one. -->
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <script src="/main.js" defer></script>
   </head>
-  <body>
+  <body class="ground">
     <header class="bar">
-      <a class="brand" href="/">Static site</a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about.html" aria-current="page">About</a>
-      </nav>
-      <button class="theme" type="button" aria-label="Switch theme">◐</button>
+      <div class="wrap bar-row">
+        <a class="brand" href="/"><span class="tile solid">S</span>Static site</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/about.html" aria-current="page">About</a>
+        </nav>
+        <div class="segmented theme" role="group" aria-label="Theme">
+          <button type="button" data-theme-choice="light">Light</button>
+          <button type="button" data-theme-choice="dark">Dark</button>
+          <button type="button" data-theme-choice="">Auto</button>
+        </div>
+      </div>
     </header>
-
-    <main class="prose">
-      <h1>About this template</h1>
-      <p>
-        Orbit serves this folder as it is. There's no <code>package.json</code>, so there's nothing to install and
-        nothing to build: every file is published at the path it has here.
-      </p>
-      <h2>Files</h2>
-      <ul>
-        <li><code>index.html</code> and <code>about.html</code>: the two pages.</li>
-        <li><code>styles.css</code>: the styles both pages share.</li>
-        <li><code>main.js</code>: the theme switch and the click counter.</li>
-        <li><code>404.html</code>: shown for a path that doesn't exist.</li>
-      </ul>
-      <h2>Going further</h2>
-      <p>
-        When you want components, a bundler or TypeScript, add a <code>package.json</code> with a
-        <code>build</code> script. Orbit runs it and serves what it writes to <code>dist</code>.
-      </p>
-      <p><a href="/">← Back home</a></p>
+    <main class="wrap stack">
+      <article class="panel prose reveal">
+        <p class="eyebrow">About this template</p>
+        <h1 class="heading">Every file is served at its own path</h1>
+        <p>
+          Orbit serves this folder as it is. There's no <code>package.json</code>, so there's nothing to install and
+          nothing to build.
+        </p>
+        <h2 class="subheading">Files</h2>
+        <ul class="files">
+          <li><span><code>index.html</code>, <code>about.html</code></span><span class="muted">the two pages</span></li>
+          <li><code>orbit.css</code><span class="muted">Orbit's tokens and components</span></li>
+          <li><code>styles.css</code><span class="muted">this site's layout</span></li>
+          <li><code>main.js</code><span class="muted">the theme switch and the click counter</span></li>
+          <li><code>404.html</code><span class="muted">shown for a path that doesn't exist</span></li>
+        </ul>
+        <h2 class="subheading">Going further</h2>
+        <p>
+          When you want components, a bundler or TypeScript, add a <code>package.json</code> with a <code>build</code>
+          script. Orbit runs it and serves what it writes to <code>dist</code>.
+        </p>
+        <p><a class="btn" href="/">← Back home</a></p>
+      </article>
     </main>
 
-    <footer class="foot">Deployed on Orbit</footer>
+    <footer class="wrap foot">
+      <span class="muted">Deployed on Orbit</span>
+    </footer>
   </body>
 </html>

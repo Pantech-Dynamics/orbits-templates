@@ -15,24 +15,26 @@ export function Login() {
 
   return (
     <main className="login">
-      <form onSubmit={submit} className="login-card">
-        <div className="logo" aria-hidden />
-        <h1>Sign in</h1>
-        <p className="muted">to the dashboard</p>
-        <label>
+      <form onSubmit={submit} className="panel login-card reveal">
+        <span className="tile solid big">D</span>
+        <div>
+          <h1 className="heading">Sign in</h1>
+          <p className="muted">to the dashboard</p>
+        </div>
+        <label className="field">
           Email
-          <input name="email" type="email" autoComplete="username" defaultValue={DEMO.email} required />
+          <input className="input" name="email" type="email" autoComplete="username" defaultValue={DEMO.email} required />
         </label>
-        <label>
+        <label className="field">
           Password
-          <input name="password" type="password" autoComplete="current-password" required />
+          <input className="input" name="password" type="password" autoComplete="current-password" required />
         </label>
         {error && (
           <p className="form-error" role="alert">
             {error}
           </p>
         )}
-        <button className="primary" disabled={pending}>
+        <button className="btn btn-primary btn-lg" disabled={pending}>
           {pending ? "Signing in…" : "Sign in"}
         </button>
         <p className="hint">

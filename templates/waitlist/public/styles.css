@@ -1,127 +1,130 @@
-:root {
-  --bg: #fafaf9;
-  --fg: #1c1917;
-  --muted: #78716c;
-  --line: #e7e5e4;
-  --accent: #ea580c;
-  --good: #15803d;
-  --bad: #b91c1c;
-  color-scheme: light;
-}
+/* This page's layout. The tokens and parts (panel, btn, badge, input, reveal…) come from orbit.css. */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0c0a09;
-    --fg: #fafaf9;
-    --muted: #a8a29e;
-    --line: #292524;
-    --accent: #fb923c;
-    --good: #4ade80;
-    --bad: #f87171;
-    color-scheme: dark;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
-  padding: 1.5rem;
-  background:
-    radial-gradient(60rem 30rem at 50% -10%, color-mix(in srgb, var(--accent) 14%, transparent), transparent),
-    var(--bg);
-  color: var(--fg);
-  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-main {
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   width: 100%;
-  max-width: 34rem;
-  text-align: center;
+  max-width: 36rem;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 10vh, 6rem) 1rem 2rem;
 }
 
-.badge {
-  display: inline-block;
-  margin: 0;
-  padding: 0.2rem 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.8rem;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
 }
 
-h1 {
-  margin: 1rem 0 0.75rem;
-  font-size: clamp(2rem, 7vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+.card .panel-head {
+  justify-content: space-between;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: clamp(1.25rem, 5vw, 2.25rem);
+}
+
+.title {
+  font-size: clamp(2rem, 7vw, 2.75rem);
 }
 
 .lede {
-  margin: 0 auto 2rem;
-  color: var(--muted);
+  margin: 0;
+  color: var(--grey-600);
+  font-size: 16px;
 }
 
 form {
   display: flex;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-input[type="email"] {
-  flex: 1;
-  min-width: 0;
-  height: 3rem;
-  padding: 0 1rem;
-  border: 1px solid var(--line);
-  border-radius: 0.6rem;
-  background: var(--bg);
-  color: inherit;
-  font: inherit;
+form .input,
+form .btn {
+  height: 2.75rem;
 }
 
-input[type="email"]:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
-
-button {
-  height: 3rem;
-  padding: 0 1.25rem;
-  border: 0;
-  border-radius: 0.6rem;
-  background: var(--fg);
-  color: var(--bg);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:disabled {
-  opacity: 0.6;
+@media (max-width: 30rem) {
+  form {
+    flex-direction: column;
+  }
 }
 
 .status {
-  min-height: 1.6em;
-  margin: 1rem 0 0;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--fill);
+  color: var(--grey-700);
+  font-size: 13px;
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.status:empty {
+  visibility: hidden;
 }
 
 .status[data-tone="good"] {
-  color: var(--good);
+  background: var(--green-soft);
+  color: var(--green);
 }
 
 .status[data-tone="bad"] {
-  color: var(--bad);
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status:empty {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
 }
 
 .count {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.875rem;
+  margin: 0;
+  padding: 0.75rem clamp(1.25rem, 5vw, 2.25rem);
+  border-top: 1px solid var(--line);
+  color: var(--grey-500);
+  font-size: 13px;
+}
+
+.count strong {
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.75rem 0.875rem;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width: 30rem) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sr,
@@ -131,10 +134,9 @@ button:disabled {
   height: 1px;
   overflow: hidden;
   clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-@media (max-width: 30rem) {
-  form {
-    flex-direction: column;
-  }
+.trap {
+  left: -9999px;
 }

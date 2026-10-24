@@ -1,15 +1,15 @@
 ---
 title: Webhooks
-description: Check that an event came from Acme, then handle it.
+description: Check that an event came from Sahel, then handle it.
 slug: 1.0/guides/webhooks
 ---
 
-Acme signs every webhook with your endpoint's secret. Check the signature before trusting the body:
+Sahel signs every webhook with your endpoint's secret. Check the signature before trusting the body:
 
 ```js
-import { verifyWebhook } from "@acme/sdk";
+import { verifyWebhook } from "@sahel/sdk";
 
-const event = verifyWebhook(rawBody, request.headers["acme-signature"], process.env.ACME_WEBHOOK_SECRET);
+const event = verifyWebhook(rawBody, request.headers["sahel-signature"], process.env.SAHEL_WEBHOOK_SECRET);
 if (event.type === "invoice.paid") {
   // Mark the order as paid.
 }

@@ -21,6 +21,12 @@ switches between them ([starlight-versions](https://starlight-versions.vercel.ap
 add it to `versions` in `astro.config.mjs` and run a build: the plugin copies today's docs into a snapshot,
 and you carry on editing the current ones.
 
+## Look
+
+`src/styles/orbit.css` is Orbit's tokens and components, shared by every Orbit template, and
+`src/styles/custom.css` maps them onto Starlight's variables: square corners, Hanken Grotesk, zinc greys and one
+blue accent, in light and dark. Change the accent there and the whole site follows.
+
 ## Run it locally
 
 ```sh

@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 
 export type Column<T> = {
   key: keyof T & string;
@@ -35,9 +35,10 @@ export function DataTable<T extends { id: string }>({ rows, columns, filters }: 
   };
 
   return (
-    <div className="table-card">
+    <section className="panel table-card reveal" style={{ "--delay": "40ms" } as CSSProperties}>
       <div className="table-tools">
         <input
+          className="input"
           type="search"
           placeholder="Search"
           value={q}
@@ -65,7 +66,7 @@ export function DataTable<T extends { id: string }>({ rows, columns, filters }: 
           </thead>
           <tbody>
             {slice.map((row) => (
-              <tr key={row.id}>
+              <tr key={row.id} className="hoverable">
                 {columns.map((c) => (
                   <td key={c.key} className={c.align}>
                     {c.render ? c.render(row) : String(row[c.key])}
@@ -75,7 +76,7 @@ export function DataTable<T extends { id: string }>({ rows, columns, filters }: 
             ))}
             {!slice.length && (
               <tr>
-                <td colSpan={columns.length} className="none">
+                <td colSpan={columns.length} className="nothing hatch">
                   Nothing matches.
                 </td>
               </tr>
@@ -84,16 +85,16 @@ export function DataTable<T extends { id: string }>({ rows, columns, filters }: 
         </table>
       </div>
       <div className="pager">
-        <span>
+        <span className="mono">
           {shown.length ? `${current * PAGE + 1}–${current * PAGE + slice.length} of ${shown.length}` : "0 results"}
         </span>
-        <button disabled={current === 0} onClick={() => setPage(current - 1)}>
+        <button className="btn btn-sm" disabled={current === 0} onClick={() => setPage(current - 1)}>
           Previous
         </button>
-        <button disabled={current >= pages - 1} onClick={() => setPage(current + 1)}>
+        <button className="btn btn-sm" disabled={current >= pages - 1} onClick={() => setPage(current + 1)}>
           Next
         </button>
       </div>
-    </div>
+    </section>
   );
 }

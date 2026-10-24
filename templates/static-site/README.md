@@ -14,7 +14,8 @@ npx serve .
 ## Files
 
 - `index.html`, `about.html`: the pages. Add more by adding `.html` files.
-- `styles.css`: shared styles, with light and dark themes.
+- `orbit.css`: Orbit's tokens and components (panels, buttons, badges, the theme), shared by every Orbit template.
+- `styles.css`: this site's own layout on top of it.
 - `main.js`: the theme switch and a click counter.
 - `404.html`: shown for paths that don't exist.
 

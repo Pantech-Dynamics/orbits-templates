@@ -25,6 +25,10 @@ folder here, and deploys it.
 - Each template has a `template.json` manifest: its card, the env it needs and how it runs.
 - `bun run catalog` validates every manifest and writes `catalog.json`, which the Orbit API serves as
   `GET /v1/templates`. Adding a template is adding a folder; nothing else changes.
+- Every template with a page wears Orbit's look: `kit/orbit.css`, the Orbit console's tokens and parts (square
+  panels on a grey ground, Hanken Grotesk, zinc greys and one blue accent, light and dark, and its motion). Each
+  template carries a copy named `orbit.css`; edit the kit and `bun run kit` copies it, and `bun run check` fails
+  when a copy drifts.
 - `bun run verify` copies each template to an empty folder and installs, builds and starts it the way Orbit's
   builder does. CI runs it for every template on every change.
 

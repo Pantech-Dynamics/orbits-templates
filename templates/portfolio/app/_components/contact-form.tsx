@@ -17,18 +17,18 @@ export function ContactForm() {
   return (
     <form action={action} className="contact">
       <div className="row">
-        <label>
+        <label className="field">
           Name
-          <input name="name" autoComplete="name" required defaultValue={state?.fields?.name} />
+          <input className="input" name="name" autoComplete="name" required defaultValue={state?.fields?.name} />
         </label>
-        <label>
+        <label className="field">
           Email
-          <input name="email" type="email" autoComplete="email" required defaultValue={state?.fields?.email} />
+          <input className="input" name="email" type="email" autoComplete="email" required defaultValue={state?.fields?.email} />
         </label>
       </div>
-      <label>
+      <label className="field">
         What are you working on?
-        <textarea name="message" rows={5} required defaultValue={state?.fields?.message} />
+        <textarea className="input" name="message" rows={5} required defaultValue={state?.fields?.message} />
       </label>
       <input className="trap" name="company" tabIndex={-1} autoComplete="off" aria-hidden />
       {state && !state.ok && (
@@ -36,7 +36,9 @@ export function ContactForm() {
           {state.message}
         </p>
       )}
-      <button disabled={pending}>{pending ? "Sending…" : "Send message"}</button>
+      <button className="btn btn-primary btn-lg" disabled={pending}>
+        {pending ? "Sending…" : "Send message"}
+      </button>
     </form>
   );
 }

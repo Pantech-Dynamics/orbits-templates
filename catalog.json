@@ -75,6 +75,10 @@
           "mode": "100644"
         },
         {
+          "path": "app/orbit.css",
+          "mode": "100644"
+        },
+        {
           "path": "app/page.tsx",
           "mode": "100644"
         },
@@ -88,6 +92,10 @@
         },
         {
           "path": "lib/cart.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/fonts.ts",
           "mode": "100644"
         },
         {
@@ -183,6 +191,10 @@
         },
         {
           "path": "src/lib/server/rsvps.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/orbit.css",
           "mode": "100644"
         },
         {
@@ -285,6 +297,10 @@
           "mode": "100644"
         },
         {
+          "path": "src/components/HeroArt.astro",
+          "mode": "100644"
+        },
+        {
           "path": "src/content.config.ts",
           "mode": "100644"
         },
@@ -334,6 +350,10 @@
         },
         {
           "path": "src/styles/global.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/styles/orbit.css",
           "mode": "100644"
         },
         {
@@ -389,6 +409,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "src/assets/logo.svg",
           "mode": "100644"
         },
         {
@@ -456,6 +480,14 @@
           "mode": "100644"
         },
         {
+          "path": "src/styles/custom.css",
+          "mode": "100644"
+        },
+        {
+          "path": "src/styles/orbit.css",
+          "mode": "100644"
+        },
+        {
           "path": "tsconfig.json",
           "mode": "100644"
         }
@@ -519,6 +551,10 @@
         },
         {
           "path": "src/lib/site.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/orbit.css",
           "mode": "100644"
         },
         {
@@ -645,6 +681,10 @@
           "mode": "100644"
         },
         {
+          "path": "app/orbit.css",
+          "mode": "100644"
+        },
+        {
           "path": "app/page.tsx",
           "mode": "100644"
         },
@@ -654,6 +694,10 @@
         },
         {
           "path": "eslint.config.mjs",
+          "mode": "100644"
+        },
+        {
+          "path": "lib/fonts.ts",
           "mode": "100644"
         },
         {
@@ -745,6 +789,10 @@
         },
         {
           "path": "src/notes.ts",
+          "mode": "100644"
+        },
+        {
+          "path": "src/orbit.css",
           "mode": "100644"
         },
         {
@@ -847,6 +895,10 @@
           "mode": "100644"
         },
         {
+          "path": "src/components/header.tsx",
+          "mode": "100644"
+        },
+        {
           "path": "src/components/table.tsx",
           "mode": "100644"
         },
@@ -864,6 +916,10 @@
         },
         {
           "path": "src/main.tsx",
+          "mode": "100644"
+        },
+        {
+          "path": "src/orbit.css",
           "mode": "100644"
         },
         {
@@ -942,6 +998,10 @@
           "mode": "100644"
         },
         {
+          "path": "public/orbit.css",
+          "mode": "100644"
+        },
+        {
           "path": "public/styles.css",
           "mode": "100644"
         },
@@ -1013,6 +1073,10 @@
         },
         {
           "path": "main.js",
+          "mode": "100644"
+        },
+        {
+          "path": "orbit.css",
           "mode": "100644"
         },
         {
@@ -1265,6 +1329,10 @@
         },
         {
           "path": "public/index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "public/orbit.css",
           "mode": "100644"
         },
         {

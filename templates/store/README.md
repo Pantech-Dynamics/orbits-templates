@@ -24,7 +24,8 @@ The secret key is only ever used on the server.
 
 - **Products** are in `lib/products.ts`, priced in kobo. Each has two colours and a glyph for its picture
   until you have photos; then swap `app/_components/tile.tsx` for a `next/image`.
-- **Styles** are in `app/globals.css`.
+- **Styles**: `app/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared
+  by every Orbit template; `app/globals.css` is this shop's layout on top of it. The fonts load in `lib/fonts.ts`.
 
 ## Before you sell for real
 

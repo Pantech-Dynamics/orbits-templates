@@ -6,7 +6,7 @@ date: 2026-10-20
 
 Email open rates for invoices hover around forty percent. WhatsApp messages are read within minutes.
 
-Starting today, every Acme plan can send payment reminders on WhatsApp, with the payment link inside the
+Starting today, every Sahel plan can send payment reminders on WhatsApp, with the payment link inside the
 message. Turn it on in **Settings → Reminders**.
 
 - Reminders come from your business's name, not ours.

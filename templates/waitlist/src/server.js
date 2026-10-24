@@ -8,7 +8,10 @@ const ADMIN_TOKEN = process.env.WAITLIST_ADMIN_TOKEN;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const page = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
-const styles = await readFile(new URL("../public/styles.css", import.meta.url));
+const assets = {
+  "/orbit.css": await readFile(new URL("../public/orbit.css", import.meta.url)),
+  "/styles.css": await readFile(new URL("../public/styles.css", import.meta.url)),
+};
 
 // In memory: gone after a redeploy. WAITLIST_WEBHOOK_URL sends each sign-up somewhere that keeps it.
 const signups = new Map();
@@ -67,7 +70,7 @@ async function join(req, res) {
 
 function reply(res, json, status, message) {
   if (json) {
-    const body = JSON.stringify({ ok: status < 400, message });
+    const body = JSON.stringify({ ok: status < 400, message, total: signups.size });
     res.writeHead(status, { "content-type": "application/json; charset=utf-8" }).end(body);
     return;
   }
@@ -93,8 +96,8 @@ const server = createServer(async (req, res) => {
   try {
     if (pathname === "/" && req.method === "GET") {
       res.writeHead(200, { "content-type": "text/html; charset=utf-8" }).end(page.replace("{{count}}", String(signups.size)));
-    } else if (pathname === "/styles.css") {
-      res.writeHead(200, { "content-type": "text/css; charset=utf-8", "cache-control": "public, max-age=3600" }).end(styles);
+    } else if (Object.hasOwn(assets, pathname)) {
+      res.writeHead(200, { "content-type": "text/css; charset=utf-8", "cache-control": "public, max-age=3600" }).end(assets[pathname]);
     } else if (pathname === "/join" && req.method === "POST") {
       await join(req, res);
     } else if (pathname === "/export.csv" && req.method === "GET") {
