@@ -1,23 +1,26 @@
-// The theme switch remembers its choice; with none, the system's setting wins.
+// The theme switch: light, dark, or the system's setting. The choice was applied before the first paint by the
+// script in <head>; this marks the current one and changes it.
 const root = document.documentElement;
-const saved = (() => {
-  try {
-    return localStorage.getItem("theme");
-  } catch {
-    return null;
-  }
-})();
-if (saved) root.dataset.theme = saved;
+const choices = document.querySelectorAll("[data-theme-choice]");
 
-document.querySelector(".theme")?.addEventListener("click", () => {
-  const dark = root.dataset.theme
-    ? root.dataset.theme === "dark"
-    : matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = dark ? "light" : "dark";
-  try {
-    localStorage.setItem("theme", root.dataset.theme);
-  } catch {}
-});
+function mark() {
+  const current = root.dataset.theme ?? "";
+  choices.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeChoice === current)));
+}
+
+choices.forEach((b) =>
+  b.addEventListener("click", () => {
+    const choice = b.dataset.themeChoice;
+    if (choice) root.dataset.theme = choice;
+    else delete root.dataset.theme;
+    try {
+      if (choice) localStorage.setItem("theme", choice);
+      else localStorage.removeItem("theme");
+    } catch {}
+    mark();
+  }),
+);
+mark();
 
 const counter = document.querySelector("[data-count]");
 let clicks = 0;

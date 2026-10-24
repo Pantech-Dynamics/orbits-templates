@@ -36,6 +36,7 @@ const problems: string[] = [];
 const items = [];
 
 for (const key of (await readdir(TEMPLATES)).sort()) {
+  if (key.startsWith(".")) continue;
   const dir = join(TEMPLATES, key);
   if (!(await stat(dir)).isDirectory()) continue;
   const where = `templates/${key}`;

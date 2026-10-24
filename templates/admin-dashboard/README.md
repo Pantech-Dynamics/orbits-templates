@@ -14,6 +14,8 @@ Sign in with the demo account: `admin@example.com` / `orbit`.
   static site can't keep a secret. Point `signIn` at your auth server and rely on its session cookie before
   putting anything private behind it.
 - **Pages** live in `src/pages/` and are listed in `src/App.tsx`.
+- **Styles**: `src/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared by
+  every Orbit template; `src/index.css` is this dashboard's layout on top of it.
 
 ## Run it locally
 

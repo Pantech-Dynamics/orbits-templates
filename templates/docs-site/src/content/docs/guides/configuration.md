@@ -6,8 +6,8 @@ description: Timeouts, retries and the base URL.
 Everything goes in one options object:
 
 ```js
-const acme = new Acme({
-  apiKey: process.env.ACME_KEY,
+const sahel = new Sahel({
+  apiKey: process.env.SAHEL_KEY,
   timeout: 10_000,
   retries: 3,
 });
@@ -18,4 +18,4 @@ const acme = new Acme({
 | `timeout` | `30000` | Milliseconds before a request is abandoned. |
 | `apiKey` | | Your secret API key. Required. |
 | `retries` | `3` | How many times a request that failed on the network is tried again. |
-| `baseUrl` | `https://api.acme.example` | Point it at a mock server in tests. |
+| `baseUrl` | `https://api.sahel.example` | Point it at a mock server in tests. |

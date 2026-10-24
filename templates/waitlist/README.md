@@ -31,5 +31,6 @@ npm run dev
 
 ## Make it yours
 
-The page is `public/index.html` and its styles are `public/styles.css`. `{{count}}` in the page is
-replaced with the number of sign-ups.
+The page is `public/index.html` and its styles are `public/styles.css`, on top of `public/orbit.css`:
+Orbit's tokens and components (panels, buttons, badges, light and dark), shared by every Orbit template.
+`{{count}}` in the page is replaced with the number of sign-ups.

@@ -1,13 +1,13 @@
 ---
 title: Client
-description: Every method on the Acme client.
+description: Every method on the Sahel client.
 ---
 
-## `new Acme(options)`
+## `new Sahel(options)`
 
 Creates a client. See [configuration](/guides/configuration/) for `options`.
 
-## `acme.createInvoice(input)`
+## `sahel.createInvoice(input)`
 
 | Field | Type | |
 | --- | --- | --- |
@@ -17,10 +17,10 @@ Creates a client. See [configuration](/guides/configuration/) for `options`.
 
 Returns the invoice.
 
-## `acme.getInvoice(id)`
+## `sahel.getInvoice(id)`
 
 Returns the invoice, or throws `NotFoundError`.
 
-## `acme.listInvoices(filters?)`
+## `sahel.listInvoices(filters?)`
 
 Returns an async iterator over every matching invoice; see [pagination](/guides/pagination/).

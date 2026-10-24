@@ -53,5 +53,11 @@ never changed once it's published, because projects remember which template they
 - **It does something real.** A working app someone could ship after changing the words, not a hello world.
 - **It's honest about its limits.** If data lives in memory, the README says it resets on every deploy and how
   to keep it.
-- **Light and dark** from a handful of CSS variables, readable at phone width.
+- **Orbit's look.** Copy `kit/orbit.css` in as `orbit.css` and build on its tokens and parts (`panel`, `btn`,
+  `badge`, `tile`, `segmented`, `reveal`, `rise`): square corners, Hanken Grotesk and JetBrains Mono, light and
+  dark, readable at phone width. Keep the template's own CSS to layout.
+- **Motion that earns its place**: the kit's load reveal staggered 40ms apart, presses and hover tints, nothing
+  on what people do all day, and every start state inside `prefers-reduced-motion: no-preference`.
+- **No borrowed placeholder brands.** Invent a name (Sahel, Kola Goods, Field Notes) rather than reuse one
+  another platform made famous.
 - **A README** that says what it is, how to make it yours, its environment, and how Orbit runs it.

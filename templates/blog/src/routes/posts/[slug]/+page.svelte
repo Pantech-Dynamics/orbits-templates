@@ -14,13 +14,13 @@
   <meta property="og:type" content="article" />
 </svelte:head>
 
-<article>
+<article class="panel post reveal">
   <header class="post-head">
-    <small><time datetime={data.post.date}>{formatDate(data.post.date)}</time> · {data.post.minutes} min read</small>
-    <h1>{data.post.title}</h1>
-    <p class="tags">
+    <p class="meta mono"><time datetime={data.post.date}>{formatDate(data.post.date)}</time> · {data.post.minutes} min read</p>
+    <h1 class="title">{data.post.title}</h1>
+    <p class="post-tags">
       {#each data.post.tags as tag (tag)}
-        <a href="/tags/{tag}">#{tag}</a>
+        <a href="/tags/{tag}" class="badge plain">#{tag}</a>
       {/each}
     </p>
   </header>
@@ -29,7 +29,11 @@
   </div>
 </article>
 
-<nav class="pager">
-  {#if data.older}<a href="/posts/{data.older.slug}">← {data.older.title}</a>{:else}<span></span>{/if}
-  {#if data.newer}<a href="/posts/{data.newer.slug}">{data.newer.title} →</a>{/if}
+<nav class="pager reveal" style="--delay: 80ms" aria-label="More posts">
+  {#if data.older}
+    <a href="/posts/{data.older.slug}" class="panel hoverable"><span class="label">← Older</span>{data.older.title}</a>
+  {:else}<span></span>{/if}
+  {#if data.newer}
+    <a href="/posts/{data.newer.slug}" class="panel hoverable newer"><span class="label">Newer →</span>{data.newer.title}</a>
+  {/if}
 </nav>

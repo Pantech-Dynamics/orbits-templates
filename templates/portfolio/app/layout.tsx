@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FONTS } from "@/lib/fonts";
 import { SITE } from "@/lib/site";
+import "./orbit.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,18 +10,26 @@ export const metadata: Metadata = {
   description: SITE.intro,
 };
 
+const initials = SITE.name
+  .split(" ")
+  .map((w) => w[0])
+  .join("");
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={FONTS}>
+      <body className="ground">
         <header className="top">
-          <Link href="/" className="name">
-            {SITE.name}
-          </Link>
-          <nav>
-            <Link href="/#work">Work</Link>
-            <Link href="/#contact">Contact</Link>
-          </nav>
+          <div className="top-row">
+            <Link href="/" className="name">
+              <span className="tile solid">{initials}</span>
+              {SITE.name}
+            </Link>
+            <nav>
+              <Link href="/#work">Work</Link>
+              <Link href="/#contact">Contact</Link>
+            </nav>
+          </div>
         </header>
         {children}
         <footer className="bottom">

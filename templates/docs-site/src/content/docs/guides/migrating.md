@@ -8,13 +8,13 @@ v2 has one breaking change and two additions.
 ## The client takes one options object
 
 ```diff
-- const acme = new Acme(process.env.ACME_KEY, { timeout: 10_000 });
-+ const acme = new Acme({ apiKey: process.env.ACME_KEY, timeout: 10_000 });
+- const sahel = new Sahel(process.env.SAHEL_KEY, { timeout: 10_000 });
++ const sahel = new Sahel({ apiKey: process.env.SAHEL_KEY, timeout: 10_000 });
 ```
 
 ## New
 
-- [`listInvoices`](/reference/client/#acmelistinvoicesfilters) returns every invoice, page by page, as an async iterator.
+- [`listInvoices`](/reference/client/#sahellistinvoicesfilters) returns every invoice, page by page, as an async iterator.
 - Requests are retried three times instead of two.
 
 Older docs are still here: pick **v1** in the version menu.

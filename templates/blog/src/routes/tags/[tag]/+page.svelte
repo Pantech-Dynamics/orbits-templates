@@ -10,9 +10,9 @@
   <title>#{data.tag} · {SITE.title}</title>
 </svelte:head>
 
-<section class="intro">
-  <h1>Posts tagged #{data.tag}</h1>
-  <p><a href="/">All writing</a></p>
+<section class="panel intro tagged reveal">
+  <h1 class="heading">Posts tagged <span class="badge accent">#{data.tag}</span></h1>
+  <a href="/">All writing</a>
 </section>
 
 <PostList posts={data.posts} />

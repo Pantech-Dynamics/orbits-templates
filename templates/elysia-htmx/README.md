@@ -34,7 +34,9 @@ src/
   components/
     layout.tsx          the HTML around every page
     tasks.tsx           the list, a row, the form, the count
-public/styles.css
+public/
+  orbit.css             Orbit's tokens and components, shared by every Orbit template
+  styles.css            this page's layout
 test/app.test.ts
 ```
 

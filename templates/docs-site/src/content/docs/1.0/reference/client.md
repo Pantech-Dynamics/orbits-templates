@@ -1,14 +1,14 @@
 ---
 title: Client
-description: Every method on the Acme client.
+description: Every method on the Sahel client.
 slug: 1.0/reference/client
 ---
 
-## `new Acme(key, options?)`
+## `new Sahel(key, options?)`
 
 Creates a client. `key` is your secret API key; see [configuration](/1.0/guides/configuration/) for `options`.
 
-## `acme.createInvoice(input)`
+## `sahel.createInvoice(input)`
 
 | Field | Type | |
 | --- | --- | --- |
@@ -18,6 +18,6 @@ Creates a client. `key` is your secret API key; see [configuration](/1.0/guides/
 
 Returns the invoice.
 
-## `acme.getInvoice(id)`
+## `sahel.getInvoice(id)`
 
 Returns the invoice, or throws `NotFoundError`.

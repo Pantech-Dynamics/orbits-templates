@@ -13,12 +13,14 @@ const date = new Intl.DateTimeFormat("en-GB", { dateStyle: "long" });
 ---
 
 <Base title={post.data.title} description={post.data.description}>
-  <article class="container section narrow prose">
-    <p class="meta">
-      <time datetime={post.data.date.toISOString()}>{date.format(post.data.date)}</time> · {post.data.author}
-    </p>
-    <h1>{post.data.title}</h1>
-    <Content />
-    <p><a href="/blog">← All posts</a></p>
-  </article>
+  <div class="container stack narrow">
+    <article class="panel prose reveal">
+      <p class="meta">
+        <a href="/blog">← All posts</a>
+        <span class="mono"><time datetime={post.data.date.toISOString()}>{date.format(post.data.date)}</time> · {post.data.author}</span>
+      </p>
+      <h1 class="title">{post.data.title}</h1>
+      <Content />
+    </article>
+  </div>
 </Base>

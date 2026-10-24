@@ -15,20 +15,27 @@ function Page() {
 }
 
 export default function App() {
+  const path = usePath();
   return (
-    <div className="shell">
+    <>
       <header className="bar">
-        <Link href="/" className="brand">
-          Notes
-        </Link>
-        <nav>
-          <Link href="/">All notes</Link>
-          <Link href="/about">About</Link>
-        </nav>
+        <div className="wrap bar-row">
+          <Link href="/" className="brand">
+            <span className="tile solid">N</span>
+            Notes
+          </Link>
+          <nav className="segmented">
+            <Link href="/" aria-current={path === "/" || path.startsWith("/notes/") ? "page" : undefined}>
+              All notes
+            </Link>
+            <Link href="/about">About</Link>
+          </nav>
+        </div>
       </header>
-      <main>
+      {/* Keyed by path so each page enters with the reveal, like a fresh load. */}
+      <main className="wrap page reveal" key={path}>
         <Page />
       </main>
-    </div>
+    </>
   );
 }

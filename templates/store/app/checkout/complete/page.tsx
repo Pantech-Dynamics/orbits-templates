@@ -9,10 +9,12 @@ export const metadata: Metadata = { title: "Your order" };
 
 export default function Complete({ searchParams }: PageProps<"/checkout/complete">) {
   return (
-    <main className="receipt">
-      <Suspense fallback={<p className="muted">Checking your payment with Paystack…</p>}>
-        <Outcome searchParams={searchParams} />
-      </Suspense>
+    <main className="page">
+      <section className="panel receipt reveal">
+        <Suspense fallback={<p className="muted">Checking your payment with Paystack…</p>}>
+          <Outcome searchParams={searchParams} />
+        </Suspense>
+      </section>
     </main>
   );
 }
@@ -38,14 +40,12 @@ async function Outcome({ searchParams }: Pick<PageProps<"/checkout/complete">, "
   return (
     <>
       <ClearCart />
-      <p className="tick" aria-hidden>
-        ✓
-      </p>
-      <h1>Thank you, your order is in.</h1>
+      <span className="badge green">Paid</span>
+      <h1 className="heading">Thank you, your order is in.</h1>
       <p className="muted">
         A receipt is on its way to {payment.customer.email}. Reference <code>{payment.reference}</code>.
       </p>
-      <ul className="summary">
+      <ul className="summary num">
         {order.lines.map(({ product, quantity }) => (
           <li key={product.slug}>
             <span>
@@ -59,7 +59,7 @@ async function Outcome({ searchParams }: Pick<PageProps<"/checkout/complete">, "
           <strong>{naira(payment.amount)}</strong>
         </li>
       </ul>
-      <Link href="/" className="button">
+      <Link href="/" className="btn btn-primary">
         Keep shopping
       </Link>
     </>
@@ -69,7 +69,8 @@ async function Outcome({ searchParams }: Pick<PageProps<"/checkout/complete">, "
 function Problem({ message, reference }: { message: string; reference?: string }) {
   return (
     <>
-      <h1>Something&apos;s not right</h1>
+      <span className="badge red">Not paid</span>
+      <h1 className="heading">Something&apos;s not right</h1>
       <p className="muted">
         {message}
         {reference && (
@@ -79,7 +80,7 @@ function Problem({ message, reference }: { message: string; reference?: string }
           </>
         )}
       </p>
-      <Link href="/cart" className="button">
+      <Link href="/cart" className="btn btn-primary">
         Back to your cart
       </Link>
     </>

@@ -1,0 +1,136 @@
+/*
+ * Starlight in Orbit's look. orbit.css (the kit every Orbit template shares) goes in Starlight's lowest layer, so
+ * its tokens and parts (badge, panel, tile…) are there for pages to use while Starlight keeps its own type and
+ * layout. The rest maps the kit's tokens onto Starlight's variables.
+ */
+@import "./orbit.css" layer(starlight.base);
+
+:root,
+:root[data-theme="light"] {
+  --sl-font: var(--font-body);
+  --sl-font-mono: var(--font-code);
+
+  --sl-color-accent-low: var(--accent-soft);
+  --sl-color-accent: var(--accent);
+  --sl-color-accent-high: var(--accent);
+  --sl-color-white: var(--ink);
+  --sl-color-gray-1: var(--grey-700);
+  --sl-color-gray-2: var(--grey-600);
+  --sl-color-gray-3: var(--grey-500);
+  --sl-color-gray-4: var(--grey-400);
+  --sl-color-gray-5: color-mix(in srgb, var(--ink) 16%, var(--canvas));
+  --sl-color-gray-6: var(--fill);
+  --sl-color-gray-7: var(--surface);
+  --sl-color-black: var(--canvas);
+
+  --sl-color-bg: var(--canvas);
+  --sl-color-bg-nav: var(--canvas);
+  --sl-color-bg-sidebar: var(--surface);
+  --sl-color-bg-inline-code: var(--fill);
+  --sl-color-text-invert: var(--accent-fg);
+  --sl-color-hairline: var(--line);
+  --sl-color-hairline-light: var(--line);
+  --sl-color-hairline-shade: var(--edge);
+
+  --sl-color-green: var(--green);
+  --sl-color-green-low: var(--green-soft);
+  --sl-color-orange: var(--amber);
+  --sl-color-orange-low: var(--amber-soft);
+  --sl-color-red: var(--red);
+  --sl-color-red-low: var(--red-soft);
+  --sl-color-blue: var(--accent);
+  --sl-color-blue-low: var(--accent-soft);
+}
+
+/* The kit sets the console's 14px; docs read better at Starlight's size. */
+body {
+  font-size: var(--sl-text-base);
+}
+
+/* Square corners everywhere, like the console: search, buttons, cards, asides, badges, code. */
+*,
+::before,
+::after {
+  border-radius: 0 !important;
+}
+
+/* The console's press: buttons and link buttons give a little under the pointer. */
+.sl-link-button,
+site-search button,
+starlight-theme-select select {
+  transition:
+    background-color var(--hover) ease,
+    border-color var(--hover) ease,
+    scale var(--press) var(--ease-out);
+}
+
+.sl-link-button:active,
+site-search button:active {
+  scale: 0.97;
+}
+
+.sl-link-button.primary {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.site-title {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.site-title img {
+  height: 1.375rem;
+  width: auto;
+}
+
+/* Cards and link cards as the console's panels: a hairline, one accent for every icon, no shadow. */
+.card,
+.sl-link-card {
+  --sl-card-border: var(--accent-soft);
+  --sl-card-bg: var(--accent-soft);
+  border: 1px solid var(--line);
+  background: var(--canvas);
+  transition:
+    border-color var(--hover) ease,
+    background-color var(--hover) ease;
+}
+
+.card .icon {
+  color: var(--accent);
+}
+
+.card .title {
+  font-size: var(--sl-text-h5);
+}
+
+.pagination-links a {
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sl-link-card:hover {
+    border-color: var(--edge);
+    background: var(--surface);
+  }
+}
+
+/* The splash page's hero rises in once, on the first visit to the home page. Reading pages don't move. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * {
+    transition:
+      opacity var(--enter) var(--ease-out),
+      transform var(--enter) var(--ease-out);
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  .hero > :nth-child(2) {
+    transition-delay: 60ms;
+  }
+}

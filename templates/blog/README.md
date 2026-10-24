@@ -24,7 +24,8 @@ components when Markdown isn't enough.
 ## Make it yours
 
 - The blog's name, description and author are in `src/lib/site.ts`.
-- Styles are in `src/app.css`, with light and dark themes.
+- Styles: `src/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared by
+  every Orbit template; `src/app.css` is this blog's layout on top of it.
 - `src/routes/about/+page.md` is a Markdown page outside the blog; add more the same way.
 
 ## Run it locally

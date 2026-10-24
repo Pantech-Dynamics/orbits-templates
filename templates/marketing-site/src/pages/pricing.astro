@@ -15,44 +15,48 @@ const faqs = [
 ---
 
 <Base title="Pricing" description="Simple plans that grow with your business.">
-  <section class="container section pricing-head">
-    <h1>Simple pricing</h1>
-    <p class="lede">Start free. Upgrade when you're sending more than twenty invoices a month.</p>
-  </section>
+  <div class="container stack">
+    <section class="panel pricing-head">
+      <h1 class="title reveal">Simple pricing</h1>
+      <p class="lede reveal" style="--delay: 40ms">Start free. Upgrade when you're sending more than twenty invoices a month.</p>
+    </section>
 
-  <section class="container plans">
-    {
-      plans.map((plan) => (
-        <article class:list={["plan", { featured: plan.featured }]}>
-          {plan.featured && <p class="tag">Most popular</p>}
-          <h2>{plan.name}</h2>
-          <p class="blurb">{plan.blurb}</p>
-          <p class="price">
-            {plan.price}
-            <span>{plan.per}</span>
-          </p>
-          <ul>
-            {plan.features.map((f) => (
-              <li>{f}</li>
-            ))}
-          </ul>
-          <a href="#" class:list={["button", { ghost: !plan.featured }]}>
-            {plan.cta}
-          </a>
-        </article>
-      ))
-    }
-  </section>
+    <section class="plans">
+      {
+        plans.map((plan, i) => (
+          <article class:list={["panel plan reveal", { featured: plan.featured }]} style={`--delay: ${80 + i * 40}ms`}>
+            <div class="plan-top">
+              <h2 class="subheading">{plan.name}</h2>
+              {plan.featured && <span class="badge accent">Most popular</span>}
+            </div>
+            <p class="blurb">{plan.blurb}</p>
+            <p class="price">
+              {plan.price}
+              <span>{plan.per}</span>
+            </p>
+            <ul>
+              {plan.features.map((f) => (
+                <li>{f}</li>
+              ))}
+            </ul>
+            <a href="#" class:list={["btn btn-lg", { "btn-primary": plan.featured }]}>
+              {plan.cta}
+            </a>
+          </article>
+        ))
+      }
+    </section>
 
-  <section class="container section faq">
-    <h2 class="section-title">Questions</h2>
-    {
-      faqs.map(({ q, a }) => (
-        <details>
-          <summary>{q}</summary>
-          <p>{a}</p>
-        </details>
-      ))
-    }
-  </section>
+    <section class="panel faq reveal" style="--delay: 200ms">
+      <div class="panel-head"><h2>Questions</h2></div>
+      {
+        faqs.map(({ q, a }) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))
+      }
+    </section>
+  </div>
 </Base>

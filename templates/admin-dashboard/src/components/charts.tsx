@@ -13,11 +13,20 @@ export function AreaChart({ data, format }: { data: { label: string; value: numb
   const line = data.map((d, i) => `${i ? "L" : "M"}${x(i)},${y(d.value)}`).join(" ");
   const area = `${line} L${x(data.length - 1)},${H - pad.bottom} L${x(0)},${H - pad.bottom} Z`;
   const shown = hover ?? data.length - 1;
+  const total = data.reduce((sum, d) => sum + d.value, 0);
 
   return (
     <div className="chart">
       <p className="chart-value">
-        {format(data[shown]?.value ?? 0)} <span>{data[shown]?.label}</span>
+        {hover === null ? (
+          <>
+            {format(total)} <span>in {data.length} days</span>
+          </>
+        ) : (
+          <>
+            {format(data[hover]?.value ?? 0)} <span>{data[hover]?.label}</span>
+          </>
+        )}
       </p>
       <svg
         viewBox={`0 0 ${W} ${H}`}
@@ -36,8 +45,12 @@ export function AreaChart({ data, format }: { data: { label: string; value: numb
         ))}
         <path d={area} className="area" />
         <path d={line} className="line" />
-        <line x1={x(shown)} x2={x(shown)} y1={pad.top} y2={H - pad.bottom} className="cursor" />
-        <circle cx={x(shown)} cy={y(data[shown]?.value ?? 0)} r={4} className="dot" />
+        {hover !== null && (
+          <>
+            <line x1={x(shown)} x2={x(shown)} y1={pad.top} y2={H - pad.bottom} className="cursor" />
+            <rect x={x(shown) - 4} y={y(data[shown]?.value ?? 0) - 4} width={8} height={8} className="dot" />
+          </>
+        )}
       </svg>
       <div className="axis">
         <span>{data[0]?.label}</span>
@@ -57,9 +70,21 @@ export function BarList({ items, format }: { items: { label: string; value: numb
           <span className="bar-track">
             <span className={`bar-fill ${item.tone ?? ""}`} style={{ width: `${(item.value / max) * 100}%` }} />
           </span>
-          <span className="bar-value">{format ? format(item.value) : item.value}</span>
+          <span className="bar-value num">{format ? format(item.value) : item.value}</span>
         </li>
       ))}
     </ul>
+  );
+}
+
+/** A row of small square-topped bars, like the console's stat cards: the last one is today. */
+export function Spark({ values }: { values: number[] }) {
+  const max = Math.max(...values, 1);
+  return (
+    <span className="spark" aria-hidden>
+      {values.map((v, i) => (
+        <span key={i} style={{ height: `${Math.max(12, (v / max) * 100)}%` }} />
+      ))}
+    </span>
   );
 }

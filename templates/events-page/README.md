@@ -13,7 +13,8 @@ Times carry their UTC offset and are shown in the event's time zone, so they're 
   Set each tier's `href`.
 - **Free RSVPs** go through the form, a SvelteKit form action in `src/routes/+page.server.ts`. They're kept in
   memory and reset on every deploy, so set `RSVP_WEBHOOK_URL` to also send each one somewhere that keeps it.
-- **Styles** are in `src/app.css`.
+- **Styles**: `src/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared
+  by every Orbit template; `src/app.css` is this page's layout on top of it.
 
 ## Environment
 

@@ -1,13 +1,13 @@
 ---
 interface Props {
   title: string;
-  icon: string;
+  n: number;
 }
-const { title, icon } = Astro.props;
+const { title, n } = Astro.props;
 ---
 
-<article class="feature">
-  <span class="feature-icon" aria-hidden="true">{icon}</span>
-  <h3>{title}</h3>
+<article class="panel feature rise">
+  <span class="label mono">{String(n).padStart(2, "0")}</span>
+  <h3 class="subheading">{title}</h3>
   <p><slot /></p>
 </article>

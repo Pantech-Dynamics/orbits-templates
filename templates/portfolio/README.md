@@ -9,7 +9,8 @@ case studies, a page for each, and a contact form. Every page is static HTML, bu
 - **Your work**: each case study is an object in `lib/work.ts` with a summary, facts and a few sections.
   Covers are drawn from two colours, so there's nothing to upload until you have screenshots; then swap
   `app/_components/cover.tsx` for a `next/image`.
-- **Styles** are in `app/globals.css`.
+- **Styles**: `app/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared
+  by every Orbit template; `app/globals.css` is this site's layout on top of it. The fonts load in `lib/fonts.ts`.
 
 ## The contact form
 

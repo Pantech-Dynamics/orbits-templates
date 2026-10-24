@@ -17,26 +17,40 @@ export const createApp = (store: TaskStore) =>
 
     .get("/", () => (
       <Layout title="Tasks">
+        <header class="bar">
+          <span class="brand">
+            <span class="tile solid">T</span>
+            Tasks
+          </span>
+          <span class="badge plain mono">Elysia · htmx</span>
+        </header>
         <main>
-          <header>
-            <h1>Tasks</h1>
-            <Remaining count={store.remaining()} />
-          </header>
-          <AddForm />
-          <input
-            class="search"
-            type="search"
-            name="q"
-            placeholder="Search"
-            aria-label="Search tasks"
-            hx-get="/tasks"
-            hx-trigger="input changed delay:250ms, search"
-            hx-target="#tasks"
-          />
-          <ul id="tasks">
-            <TaskList tasks={store.list()} />
-          </ul>
-          <footer>
+          <section class="panel reveal">
+            <div class="panel-head">
+              <h1>To do</h1>
+              <Remaining count={store.remaining()} />
+            </div>
+            <AddForm />
+          </section>
+          <section class="panel reveal" style="--delay: 60ms">
+            <div class="panel-head">
+              <input
+                class="input search"
+                type="search"
+                name="q"
+                placeholder="Search"
+                aria-label="Search tasks"
+                hx-get="/tasks"
+                hx-trigger="input changed delay:250ms, search"
+                hx-target="#tasks"
+                hx-indicator="#tasks"
+              />
+            </div>
+            <ul id="tasks">
+              <TaskList tasks={store.list()} />
+            </ul>
+          </section>
+          <footer class="reveal" style="--delay: 120ms">
             Server-rendered with Elysia and JSX; htmx swaps in each change. No client-side framework, about 16 KB of
             JavaScript.
           </footer>
@@ -61,7 +75,7 @@ export const createApp = (store: TaskStore) =>
         const task = store.add(title);
         return (
           <>
-            <TaskItem task={task} />
+            <TaskItem task={task} fresh />
             <Remaining count={store.remaining()} oob />
           </>
         );
