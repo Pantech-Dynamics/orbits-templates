@@ -6,7 +6,16 @@
   "framework": "nextjs",
   "framework_label": "Next.js",
   "required_env": [
-    { "key": "PAYSTACK_SECRET_KEY", "hint": "From Paystack, Settings → API Keys. Use the test key (sk_test_…) until you take real payments." }
+    {
+      "key": "PAYSTACK_SECRET_KEY",
+      "hint": "From Paystack, Settings → API Keys. Use the test key (sk_test_…) until you take real payments."
+    }
   ],
-  "order": 10
+  "order": 10,
+  "optional_env": [
+    {
+      "key": "SITE_URL",
+      "hint": "The site's full address, for link previews: https://…"
+    }
+  ]
 }

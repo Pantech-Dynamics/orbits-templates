@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/products/[slug]">): Promise<Metadata> {
   const product = productBySlug((await params).slug);
-  return product ? { title: product.name, description: product.description } : {};
+  return product ? { title: product.name, description: product.description, openGraph: { title: product.name, description: product.description } } : {};
 }
 
 export default async function ProductPage({ params }: PageProps<"/products/[slug]">) {

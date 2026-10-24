@@ -13,6 +13,8 @@ interface Props {
 const { title, description = SITE.description } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+// A full address when the site knows its own (SITE_URL); some link bots ignore a relative one.
+const image = Astro.site ? new URL("/og.png", Astro.site).href : "/og.png";
 ---
 
 <!doctype html>
@@ -24,6 +26,12 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <meta name="description" content={description} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE.name}: ${SITE.tagline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
     {canonical && <link rel="canonical" href={canonical} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

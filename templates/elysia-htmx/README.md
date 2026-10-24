@@ -16,6 +16,10 @@ page.
 - A form that fails validation answers 422 with itself and the error, and `HX-Retarget` puts it back in place.
 - `public/` is served at `/public`; htmx comes from `node_modules`, so updating it is a version bump.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. `og:image` points at it with the address the page was asked for, or `SITE_URL` when it's set, so a custom domain shows up right.
+
 ## Run it locally
 
 ```sh

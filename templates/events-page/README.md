@@ -22,6 +22,10 @@ Times carry their UTC offset and are shown in the event's time zone, so they're 
 | --- | --- |
 | `RSVP_WEBHOOK_URL` | Optional. Each RSVP is POSTed here as JSON. Declared and checked in `src/env.ts`. |
 
+## Link previews
+
+`static/og.png` is the picture a shared link shows (1200×630); swap in your own. `og:image` points at it with the address the page was asked for, or `SITE_URL` when it's set, so a custom domain shows up right.
+
 ## Run it locally
 
 ```sh

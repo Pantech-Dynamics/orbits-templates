@@ -23,6 +23,10 @@ sign-up is also sent there as JSON, to somewhere that keeps it:
 | `WAITLIST_WEBHOOK_URL` | Optional. Where each sign-up is POSTed. |
 | `WAITLIST_ADMIN_TOKEN` | Optional. Lets you download the list from `/export.csv` with `Authorization: Bearer <token>`. |
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. `og:image` points at it with the address the page was asked for, or `SITE_URL` when it's set, so a custom domain shows up right.
+
 ## Run it locally
 
 ```sh

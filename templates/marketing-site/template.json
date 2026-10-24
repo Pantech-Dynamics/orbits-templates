@@ -5,7 +5,16 @@
   "category": "content",
   "framework": "astro",
   "framework_label": "Astro",
-  "workload": { "type": "static", "output_directory": "dist" },
+  "workload": {
+    "type": "static",
+    "output_directory": "dist"
+  },
   "node_version": "24.x",
-  "order": 10
+  "order": 10,
+  "optional_env": [
+    {
+      "key": "SITE_URL",
+      "hint": "The site's full address, for link previews: https://…"
+    }
+  ]
 }

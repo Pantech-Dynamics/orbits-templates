@@ -20,6 +20,10 @@ field on the server, keeps what was typed if something's wrong, and ignores bots
 Set `CONTACT_WEBHOOK_URL` to have each message POSTed as JSON to a Slack incoming webhook, a Zapier or Make
 hook, or your own API. Without it, messages are written to the app's logs.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh

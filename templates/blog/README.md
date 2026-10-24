@@ -28,6 +28,10 @@ components when Markdown isn't enough.
   every Orbit template; `src/app.css` is this blog's layout on top of it.
 - `src/routes/about/+page.md` is a Markdown page outside the blog; add more the same way.
 
+## Link previews
+
+`static/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh

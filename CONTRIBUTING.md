@@ -56,6 +56,8 @@ never changed once it's published, because projects remember which template they
 - **Orbit's look.** Copy `kit/orbit.css` in as `orbit.css` and build on its tokens and parts (`panel`, `btn`,
   `badge`, `tile`, `segmented`, `reveal`, `rise`): square corners, Hanken Grotesk and JetBrains Mono, light and
   dark, readable at phone width. Keep the template's own CSS to layout.
+- **A link preview.** Add the template's card to `og/cards.ts`, run `bun run og`, and point `og:image` at it,
+  as a full address when `SITE_URL` is set (or from the request, for a server).
 - **Motion that earns its place**: the kit's load reveal staggered 40ms apart, presses and hover tints, nothing
   on what people do all day, and every start state inside `prefers-reduced-motion: no-preference`.
 - **No borrowed placeholder brands.** Invent a name (Sahel, Kola Goods, Field Notes) rather than reuse one

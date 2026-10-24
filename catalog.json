@@ -15,7 +15,12 @@
           "hint": "From Paystack, Settings → API Keys. Use the test key (sk_test_…) until you take real payments."
         }
       ],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "order": 10,
       "files": [
         {
@@ -99,6 +104,10 @@
           "mode": "100644"
         },
         {
+          "path": "lib/og.tsx",
+          "mode": "100644"
+        },
+        {
           "path": "lib/paystack.ts",
           "mode": "100644"
         },
@@ -116,6 +125,10 @@
         },
         {
           "path": "package.json",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -137,6 +150,10 @@
         {
           "key": "RSVP_WEBHOOK_URL",
           "hint": "Each free RSVP is POSTed here: Slack, Zapier, your own API."
+        },
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
         }
       ],
       "order": 20,
@@ -214,6 +231,10 @@
           "mode": "100644"
         },
         {
+          "path": "static/og.png",
+          "mode": "100644"
+        },
+        {
           "path": "static/robots.txt",
           "mode": "100644"
         },
@@ -236,7 +257,12 @@
       "framework": "astro",
       "framework_label": "Astro",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "workload": {
         "type": "static",
         "output_directory": "dist"
@@ -282,6 +308,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -371,7 +401,12 @@
       "framework": "astro",
       "framework_label": "Astro",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "workload": {
         "type": "static",
         "output_directory": "dist"
@@ -409,6 +444,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -502,7 +541,12 @@
       "framework": "sveltekit",
       "framework_label": "SvelteKit",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "order": 30,
       "files": [
         {
@@ -614,6 +658,10 @@
           "mode": "100644"
         },
         {
+          "path": "static/og.png",
+          "mode": "100644"
+        },
+        {
           "path": "static/robots.txt",
           "mode": "100644"
         },
@@ -640,6 +688,10 @@
         {
           "key": "CONTACT_WEBHOOK_URL",
           "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API."
+        },
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
         }
       ],
       "order": 40,
@@ -701,6 +753,10 @@
           "mode": "100644"
         },
         {
+          "path": "lib/og.tsx",
+          "mode": "100644"
+        },
+        {
           "path": "lib/site.ts",
           "mode": "100644"
         },
@@ -721,6 +777,10 @@
           "mode": "100644"
         },
         {
+          "path": "public/og.png",
+          "mode": "100644"
+        },
+        {
           "path": "tsconfig.json",
           "mode": "100644"
         }
@@ -735,7 +795,12 @@
       "framework": "vite",
       "framework_label": "Vite + React",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "workload": {
         "type": "static",
         "output_directory": "dist",
@@ -769,6 +834,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -842,7 +911,12 @@
       "framework": "vite",
       "framework_label": "Vite + React",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "workload": {
         "type": "static",
         "output_directory": "dist",
@@ -876,6 +950,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -969,7 +1047,12 @@
       "framework": "elysia",
       "framework_label": "Elysia",
       "required_env": [],
-      "optional_env": [],
+      "optional_env": [
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
+        }
+      ],
       "workload": {
         "type": "app",
         "port": 3000,
@@ -995,6 +1078,10 @@
         },
         {
           "path": "public/favicon.svg",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {
@@ -1073,6 +1160,10 @@
         },
         {
           "path": "main.js",
+          "mode": "100644"
+        },
+        {
+          "path": "og.png",
           "mode": "100644"
         },
         {
@@ -1302,6 +1393,10 @@
         {
           "key": "WAITLIST_ADMIN_TOKEN",
           "hint": "Lets you download the list from /export.csv."
+        },
+        {
+          "key": "SITE_URL",
+          "hint": "The site's full address, for link previews: https://…"
         }
       ],
       "workload": {
@@ -1329,6 +1424,10 @@
         },
         {
           "path": "public/index.html",
+          "mode": "100644"
+        },
+        {
+          "path": "public/og.png",
           "mode": "100644"
         },
         {

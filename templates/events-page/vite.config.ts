@@ -3,6 +3,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	// The site's address for link previews, from SITE_URL at build. Empty, og:image stays relative.
+	define: { __SITE_URL__: JSON.stringify((process.env.SITE_URL ?? '').replace(/\/$/, '')) },
 	plugins: [
 		sveltekit({
 			compilerOptions: {

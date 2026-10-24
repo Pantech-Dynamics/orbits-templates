@@ -33,6 +33,10 @@ The secret key is only ever used on the server.
   from the receipt page: the buyer might close the tab before they get there.
 - Keep orders somewhere: a database, or the webhook forwarding them to your inventory tool.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh
