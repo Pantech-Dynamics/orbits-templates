@@ -1,5 +1,6 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
+  import { page } from "$app/state";
   import { days, EVENT, formatDay, formatTime, SCHEDULE, speakerById, SPEAKERS, TICKETS } from "#lib/event.ts";
   import type { PageProps } from "./$types";
 
@@ -19,6 +20,12 @@
   <meta name="description" content={EVENT.tagline} />
   <meta property="og:title" content={EVENT.name} />
   <meta property="og:description" content={EVENT.tagline} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{__SITE_URL__ || page.url.origin}/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{EVENT.name}: {EVENT.tagline}" />
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <header class="bar">

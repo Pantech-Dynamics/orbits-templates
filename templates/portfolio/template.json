@@ -5,6 +5,15 @@
   "category": "content",
   "framework": "nextjs",
   "framework_label": "Next.js",
-  "optional_env": [{ "key": "CONTACT_WEBHOOK_URL", "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API." }],
+  "optional_env": [
+    {
+      "key": "CONTACT_WEBHOOK_URL",
+      "hint": "Messages from the contact form are POSTed here: Slack, Zapier, your own API."
+    },
+    {
+      "key": "SITE_URL",
+      "hint": "The site's full address, for link previews: https://…"
+    }
+  ],
   "order": 40
 }

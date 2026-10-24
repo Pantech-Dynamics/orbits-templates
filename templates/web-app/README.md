@@ -5,6 +5,10 @@ A single-page app with Vite and React: a small notes app with its own router, sa
 The server sends `index.html` once. After that React draws every page in the browser, and Orbit's
 single-page-app fallback serves `index.html` for any path, so a link straight to `/notes/<id>` works.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh

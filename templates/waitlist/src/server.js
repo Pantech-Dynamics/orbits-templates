@@ -8,10 +8,19 @@ const ADMIN_TOKEN = process.env.WAITLIST_ADMIN_TOKEN;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const page = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
+const asset = async (file, type) => ({ type, body: await readFile(new URL(`../public/${file}`, import.meta.url)) });
 const assets = {
-  "/orbit.css": await readFile(new URL("../public/orbit.css", import.meta.url)),
-  "/styles.css": await readFile(new URL("../public/styles.css", import.meta.url)),
+  "/orbit.css": await asset("orbit.css", "text/css; charset=utf-8"),
+  "/styles.css": await asset("styles.css", "text/css; charset=utf-8"),
+  "/og.png": await asset("og.png", "image/png"),
 };
+
+// Link previews need a full address for og:image: SITE_URL when it's set, else the one this request came to.
+function origin(req) {
+  if (process.env.SITE_URL) return process.env.SITE_URL.replace(/\/$/, "");
+  const proto = String(req.headers["x-forwarded-proto"] ?? "http").split(",")[0];
+  return `${proto}://${req.headers.host}`;
+}
 
 // In memory: gone after a redeploy. WAITLIST_WEBHOOK_URL sends each sign-up somewhere that keeps it.
 const signups = new Map();
@@ -95,9 +104,9 @@ const server = createServer(async (req, res) => {
   const { pathname } = new URL(req.url ?? "/", "http://localhost");
   try {
     if (pathname === "/" && req.method === "GET") {
-      res.writeHead(200, { "content-type": "text/html; charset=utf-8" }).end(page.replace("{{count}}", String(signups.size)));
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8" }).end(page.replace("{{count}}", String(signups.size)).replace("{{origin}}", origin(req)));
     } else if (Object.hasOwn(assets, pathname)) {
-      res.writeHead(200, { "content-type": "text/css; charset=utf-8", "cache-control": "public, max-age=3600" }).end(assets[pathname]);
+      res.writeHead(200, { "content-type": assets[pathname].type, "cache-control": "public, max-age=3600" }).end(assets[pathname].body);
     } else if (pathname === "/join" && req.method === "POST") {
       await join(req, res);
     } else if (pathname === "/export.csv" && req.method === "GET") {

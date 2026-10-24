@@ -29,6 +29,8 @@ folder here, and deploys it.
   panels on a grey ground, Hanken Grotesk, zinc greys and one blue accent, light and dark, and its motion). Each
   template carries a copy named `orbit.css`; edit the kit and `bun run kit` copies it, and `bun run check` fails
   when a copy drifts.
+- Each of those also ships a link-preview image (`og.png`, 1200×630) drawn in the same look from `og/cards.ts`.
+  `bun run og` draws them again with the Chrome on your machine; commit the PNGs it writes.
 - `bun run verify` copies each template to an empty folder and installs, builds and starts it the way Orbit's
   builder does. CI runs it for every template on every change.
 

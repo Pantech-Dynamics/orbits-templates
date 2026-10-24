@@ -3,7 +3,11 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightVersions from "starlight-versions";
 
+const SITE_URL = process.env.SITE_URL?.replace(/\/$/, "");
+
 export default defineConfig({
+  // The site's address, for canonical links and link previews. Set SITE_URL in Orbit's environment variables.
+  site: SITE_URL,
   integrations: [
     starlight({
       title: "Sahel SDK",
@@ -14,6 +18,10 @@ export default defineConfig({
       lastUpdated: true,
       customCss: ["./src/styles/custom.css"],
       head: [
+        { tag: "meta", attrs: { property: "og:image", content: `${SITE_URL ?? ""}/og.png` } },
+        { tag: "meta", attrs: { property: "og:image:width", content: "1200" } },
+        { tag: "meta", attrs: { property: "og:image:height", content: "630" } },
+        { tag: "meta", attrs: { property: "og:image:alt", content: "Sahel SDK: call the Sahel API from JavaScript." } },
         { tag: "link", attrs: { rel: "preconnect", href: "https://fonts.googleapis.com" } },
         { tag: "link", attrs: { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true } },
         {

@@ -7,6 +7,11 @@ import type { TaskStore } from "./tasks";
 
 const id = t.Object({ id: t.Number({ minimum: 1 }) });
 
+/** The site's address for link previews: SITE_URL when it's set, else the one this request came to. */
+const origin = (request: Request) =>
+  process.env.SITE_URL?.replace(/\/$/, "") ||
+  `${request.headers.get("x-forwarded-proto")?.split(",")[0] ?? "http"}://${request.headers.get("host") ?? new URL(request.url).host}`;
+
 /** Every route answers with HTML: a whole page for a visit, a fragment for an htmx request. */
 export const createApp = (store: TaskStore) =>
   new Elysia()
@@ -15,8 +20,8 @@ export const createApp = (store: TaskStore) =>
     .get("/htmx.min.js", () => file("node_modules/htmx.org/dist/htmx.min.js"))
     .get("/health", () => ({ status: "ok" }))
 
-    .get("/", () => (
-      <Layout title="Tasks">
+    .get("/", ({ request }) => (
+      <Layout title="Tasks" origin={origin(request)}>
         <header class="bar">
           <span class="brand">
             <span class="tile solid">T</span>

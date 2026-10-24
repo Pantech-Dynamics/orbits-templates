@@ -10,7 +10,7 @@ const HTMX_CONFIG = JSON.stringify({
   ],
 });
 
-export function Layout({ title, children }: { title: string; children?: JSX.Element | JSX.Element[] }) {
+export function Layout({ title, origin, children }: { title: string; origin: string; children?: JSX.Element | JSX.Element[] }) {
   return (
     <html lang="en">
       <head>
@@ -19,6 +19,14 @@ export function Layout({ title, children }: { title: string; children?: JSX.Elem
         <title safe>{title}</title>
         <meta name="description" content="Server-rendered pages with Elysia, JSX and htmx." />
         <meta name="htmx-config" content={HTMX_CONFIG} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Server-rendered pages with Elysia, JSX and htmx." />
+        <meta property="og:image" content={`${origin}/public/og.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Tasks: server-rendered, swapped in by htmx." />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />

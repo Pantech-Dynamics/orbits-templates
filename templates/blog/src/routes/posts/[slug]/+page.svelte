@@ -12,6 +12,7 @@
   <meta name="description" content={data.post.description} />
   <meta property="og:title" content={data.post.title} />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content={data.post.description} />
 </svelte:head>
 
 <article class="panel post reveal">

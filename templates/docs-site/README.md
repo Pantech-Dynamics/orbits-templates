@@ -27,6 +27,10 @@ and you carry on editing the current ones.
 `src/styles/custom.css` maps them onto Starlight's variables: square corners, Hanken Grotesk, zinc greys and one
 blue accent, in light and dark. Change the accent there and the whole site follows.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh

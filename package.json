@@ -7,10 +7,12 @@
     "catalog": "bun scripts/catalog.ts",
     "check": "bun scripts/catalog.ts --check && bun scripts/kit.ts --check",
     "verify": "bun scripts/verify.ts",
-    "kit": "bun scripts/kit.ts"
+    "kit": "bun scripts/kit.ts",
+    "og": "bun scripts/og.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.4.4",
+    "playwright-core": "1.56.1",
     "zod": "^4.6.7"
   }
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FONTS } from "@/lib/fonts";
+import { OpenGraph } from "@/lib/og";
 import { SITE } from "@/lib/site";
 import "./orbit.css";
 import "./globals.css";
@@ -8,6 +9,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: { default: `${SITE.name}, ${SITE.role}`, template: `%s · ${SITE.name}` },
   description: SITE.intro,
+  twitter: { card: "summary_large_image" },
+  openGraph: { title: `${SITE.name}, ${SITE.role}`, description: SITE.intro, siteName: SITE.name },
 };
 
 const initials = SITE.name
@@ -18,6 +21,9 @@ const initials = SITE.name
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={FONTS}>
+      <head>
+        <OpenGraph alt={`${SITE.name}: ${SITE.intro}`} />
+      </head>
       <body className="ground">
         <header className="top">
           <div className="top-row">

@@ -5,6 +5,16 @@
   "category": "apps",
   "framework": "vite",
   "framework_label": "Vite + React",
-  "workload": { "type": "static", "output_directory": "dist", "spa_fallback": true },
-  "order": 15
+  "workload": {
+    "type": "static",
+    "output_directory": "dist",
+    "spa_fallback": true
+  },
+  "order": 15,
+  "optional_env": [
+    {
+      "key": "SITE_URL",
+      "hint": "The site's full address, for link previews: https://…"
+    }
+  ]
 }

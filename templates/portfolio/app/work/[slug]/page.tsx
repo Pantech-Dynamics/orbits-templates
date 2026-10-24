@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/work/[slug]">): Promise<Metadata> {
   const project = projectBySlug((await params).slug);
-  return project ? { title: project.title, description: project.summary } : {};
+  return project ? { title: project.title, description: project.summary, openGraph: { title: project.title, description: project.summary } } : {};
 }
 
 const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;

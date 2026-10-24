@@ -17,6 +17,10 @@ Sign in with the demo account: `admin@example.com` / `orbit`.
 - **Styles**: `src/orbit.css` is Orbit's tokens and components (panels, buttons, badges, light and dark), shared by
   every Orbit template; `src/index.css` is this dashboard's layout on top of it.
 
+## Link previews
+
+`public/og.png` is the picture a shared link shows (1200×630); swap in your own. Set `SITE_URL` (`https://your-site.com`) in the project's environment variables and the build writes `og:image` as a full address; without it the address is relative, which some link bots ignore.
+
 ## Run it locally
 
 ```sh

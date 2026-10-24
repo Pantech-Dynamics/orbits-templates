@@ -13,6 +13,12 @@
 <svelte:head>
   <link rel="icon" href={favicon} />
   <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+  <meta property="og:site_name" content={SITE.title} />
+  <meta property="og:image" content="{__SITE_URL__}/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{SITE.title}: {SITE.description}" />
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <header class="bar">
